@@ -16,7 +16,7 @@ $db_hash = sqlexec("SELECT * FROM `pyover_users` WHERE username=\"$login_usernam
 if (password_verify($login_password, $db_hash["password_hash"])) {
     echo 'Password is valid !';
     $_SESSION['user_id'] = $login_username;
-    header("Location: http://$_SERVER[HTTP_HOST]/test.php"); /* Redirect browser */
+    header("Location: http://$_SERVER[HTTP_HOST]/PyDashboard.php?pane=dashboard"); /* Redirect browser */
     exit();
 } else {
     echo 'Invalid password.';
