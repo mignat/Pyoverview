@@ -1,11 +1,8 @@
 version: '3'
 services:
   db:
-    image: mysql
+    build: ./containers/db
     command: --default-authentication-plugin=mysql_native_password
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: root
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
@@ -15,6 +12,6 @@ services:
     - "8080:80"
 
   web:
-    build: ./docker-test-files/web-php
+    build: ./containers/web
     ports:
     - "9090:80"
