@@ -28,11 +28,11 @@ switch ($_GET['type']) {
 
     case "cpu":
         $procent = get_server_cpu_usage();
-        echo $procent;
+        echo "$procent %";
         break;
     case "ram":
         $procent = get_server_memory_usage();
-        echo $procent;
+        echo "$procent %";
         break;
 
     default:

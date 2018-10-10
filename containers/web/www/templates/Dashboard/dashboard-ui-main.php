@@ -6,6 +6,13 @@
  * Time: 13:26
  */
 ?>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+    window.setInterval(function () {
+        $('#cpu-widget').load('lib/systeminfo.php?type=cpu');
+        $('#ram-widget').load('lib/systeminfo.php?type=ram');
+    }, 500);
+</script>
 <div class="container">
     <div class="container">
 <div class="row">

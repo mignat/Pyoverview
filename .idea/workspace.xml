@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="78e11e5f-6c7b-4fa8-893d-93e855b0bd2d" name="Default Changelist" comment="Initial Commit">
-      <change afterPath="$PROJECT_DIR$/containers/web/www/scripts/dashboard.js" afterDir="false" />
+    <list default="true" id="78e11e5f-6c7b-4fa8-893d-93e855b0bd2d" name="Default Changelist" comment="Added ajax to update dashboard">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/containers/web/www/PyDashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/containers/web/www/PyDashboard.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/containers/web/www/lib/systeminfo.php" beforeDir="false" afterPath="$PROJECT_DIR$/containers/web/www/lib/systeminfo.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/containers/web/www/templates/Dashboard/dashboard-ui-main.php" beforeDir="false" afterPath="$PROJECT_DIR$/containers/web/www/templates/Dashboard/dashboard-ui-main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/containers/web/www/templates/error.php" beforeDir="false" afterPath="$PROJECT_DIR$/containers/web/www/templates/error.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,19 +36,19 @@
     <session id="1868274030">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="50" />
+          <entry key="project.closed" value="53" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.10" value="14" />
-          <entry key="project.open.time.11" value="16" />
-          <entry key="project.open.time.12" value="10" />
-          <entry key="project.open.time.13" value="1" />
-          <entry key="project.open.time.14" value="1" />
+          <entry key="project.open.time.11" value="17" />
+          <entry key="project.open.time.12" value="11" />
+          <entry key="project.open.time.13" value="2" />
+          <entry key="project.open.time.14" value="2" />
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.9" value="3" />
-          <entry key="project.opened" value="50" />
+          <entry key="project.opened" value="54" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -64,7 +62,7 @@
           <entry key="js" value="1" />
           <entry key="json" value="2" />
           <entry key="map" value="1" />
-          <entry key="php" value="107" />
+          <entry key="php" value="109" />
           <entry key="sh" value="4" />
           <entry key="sql" value="4" />
           <entry key="svg" value="1" />
@@ -82,7 +80,7 @@
           <entry key="Ini" value="1" />
           <entry key="JSON" value="2" />
           <entry key="JavaScript" value="1" />
-          <entry key="PHP" value="108" />
+          <entry key="PHP" value="110" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="SQL" value="2" />
           <entry key="SVG" value="1" />
@@ -100,11 +98,11 @@
           <entry key="ini" value="22" />
           <entry key="js" value="55" />
           <entry key="json" value="4" />
-          <entry key="php" value="8703" />
+          <entry key="php" value="8765" />
           <entry key="sh" value="146" />
           <entry key="sql" value="33" />
           <entry key="systeminfo" value="13" />
-          <entry key="txt" value="26" />
+          <entry key="txt" value="56" />
           <entry key="yaml" value="249" />
         </counts>
       </usages-collector>
@@ -117,8 +115,8 @@
           <entry key="Ini" value="22" />
           <entry key="JSON" value="4" />
           <entry key="JavaScript" value="55" />
-          <entry key="PHP" value="8679" />
-          <entry key="PLAIN_TEXT" value="26" />
+          <entry key="PHP" value="8741" />
+          <entry key="PLAIN_TEXT" value="56" />
           <entry key="Scratch" value="33" />
           <entry key="YAML" value="249" />
         </counts>
@@ -135,20 +133,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/containers/web/www/PyDashboard.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="990">
-              <caret line="118" column="7" lean-forward="true" selection-start-line="118" selection-start-column="7" selection-end-line="118" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/containers/web/www/scripts/dashboard.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="9" selection-end-line="3" selection-end-column="9" />
+            <state relative-caret-position="1530">
+              <caret line="108" selection-start-line="108" selection-end-line="109" />
             </state>
           </provider>
         </entry>
@@ -167,11 +156,20 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/containers/web/www/templates/Dashboard/dashboard-ui-main.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="7" column="2" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
+            <state relative-caret-position="120">
+              <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/containers/web/www/lib/systeminfo.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="34" column="24" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -276,10 +274,10 @@
         <option value="$PROJECT_DIR$/containers/web/www/lib/systeminfo" />
         <option value="$PROJECT_DIR$/containers/web/www/styles/costum.css" />
         <option value="$PROJECT_DIR$/containers/web/www/templates/error.php" />
-        <option value="$PROJECT_DIR$/containers/web/www/lib/systeminfo.php" />
-        <option value="$PROJECT_DIR$/containers/web/www/templates/Dashboard/dashboard-ui-main.php" />
         <option value="$PROJECT_DIR$/containers/web/www/scripts/dashboard.js" />
         <option value="$PROJECT_DIR$/containers/web/www/PyDashboard.php" />
+        <option value="$PROJECT_DIR$/containers/web/www/lib/systeminfo.php" />
+        <option value="$PROJECT_DIR$/containers/web/www/templates/Dashboard/dashboard-ui-main.php" />
       </list>
     </option>
   </component>
@@ -314,7 +312,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -346,6 +343,14 @@
               <item name="containers" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="www" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PyOverview" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PyOverview" type="462c0819:PsiDirectoryNode" />
+              <item name="containers" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="www" type="462c0819:PsiDirectoryNode" />
               <item name="scripts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -369,6 +374,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -519,11 +525,15 @@
       <workItem from="1539003445744" duration="1248000" />
       <workItem from="1539005726137" duration="236000" />
       <workItem from="1539008977725" duration="745000" />
+      <workItem from="1539075613571" duration="265000" />
+      <workItem from="1539169957601" duration="1197000" />
+      <workItem from="1539173146381" duration="1345000" />
+      <workItem from="1539175458685" duration="219000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="143688000" />
+    <option name="totallyTimeSpent" value="146714000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -538,7 +548,7 @@
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
     <layout>
       <window_info id="Favorites" order="0" sideWeight="0.5013193" side_tool="true" weight="0.24973376" />
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49868074" weight="0.42971247" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49868074" visible="true" weight="0.2284345" />
       <window_info id="Structure" order="2" sideWeight="0.5013193" side_tool="true" weight="0.24973376" />
       <window_info anchor="bottom" id="PHP-CGI Server" order="0" weight="0.32920355" />
       <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.49307775" weight="0.32920355" />
@@ -561,31 +571,6 @@
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Favorites" order="0" sideWeight="0.5013193" side_tool="true" weight="0.24973376" />
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49868074" visible="true" weight="0.42971247" />
-      <window_info id="Structure" order="2" sideWeight="0.5013193" side_tool="true" weight="0.24973376" />
-      <window_info anchor="bottom" id="PHP-CGI Server" order="0" weight="0.32920355" />
-      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.49307775" weight="0.32920355" />
-      <window_info anchor="bottom" id="Database Changes" order="2" sideWeight="0.49946752" weight="0.32920355" />
-      <window_info anchor="bottom" id="Event Log" order="3" sideWeight="0.50745475" side_tool="true" weight="0.32920355" />
-      <window_info anchor="bottom" id="Version Control" order="4" weight="0.32920355" />
-      <window_info anchor="bottom" id="Database Console" order="5" weight="0.32920355" />
-      <window_info active="true" anchor="bottom" id="Docker" order="6" sideWeight="0.49946752" visible="true" weight="0.32920355" />
-      <window_info anchor="bottom" id="Message" order="7" />
-      <window_info anchor="bottom" id="Find" order="8" weight="0.32920355" />
-      <window_info anchor="bottom" id="Run" order="9" sideWeight="0.49254525" weight="0.32920355" />
-      <window_info anchor="bottom" id="Debug" order="10" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="13" sideWeight="0.49946752" weight="0.32920355" />
-      <window_info active="true" anchor="bottom" id="Messages" order="14" visible="true" weight="0.32920355" />
-      <window_info anchor="bottom" id="Inspection Results" order="15" weight="0.32920355" />
-      <window_info anchor="right" id="Database" order="0" weight="0.32960597" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -594,8 +579,12 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <MESSAGE value="Initial Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit" />
+    <MESSAGE value="Added ajax to update dashboard" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added ajax to update dashboard" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/docker-test-files/web-php/www/dist/css/bootstrap.min.css" />
@@ -668,24 +657,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/containers/web/www/lib/systeminfo.php">
+    <entry file="file://$PROJECT_DIR$/containers/web/www/scripts/dashboard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="40" column="1" selection-start-line="40" selection-start-column="1" selection-end-line="40" selection-end-column="1" />
+        <state relative-caret-position="45">
+          <caret line="3" column="9" selection-end-line="3" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/containers/web/www/PyDashboard.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="118" column="7" lean-forward="true" selection-start-line="118" selection-start-column="7" selection-end-line="118" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/containers/web/www/scripts/dashboard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="9" selection-end-line="3" selection-end-column="9" />
+        <state relative-caret-position="1530">
+          <caret line="108" selection-start-line="108" selection-end-line="109" />
         </state>
       </provider>
     </entry>
@@ -699,10 +681,10 @@
     <entry file="file://$PROJECT_DIR$/containers/web/www/templates/Dashboard/navbar-subnav-dashboard.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/containers/web/www/templates/Dashboard/dashboard-ui-main.php">
+    <entry file="file://$PROJECT_DIR$/containers/web/www/lib/systeminfo.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="7" column="2" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
+        <state relative-caret-position="510">
+          <caret line="34" column="24" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -722,6 +704,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/containers/web/www/templates/Dashboard/dashboard-ui-main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
         </state>
       </provider>
     </entry>
