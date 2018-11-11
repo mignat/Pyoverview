@@ -19,6 +19,7 @@ if (password_verify($login_password, $db_hash["password_hash"])) {
     header("Location: http://$_SERVER[HTTP_HOST]/PyDashboard.php"); /* Redirect browser */
     exit();
 } else {
-    echo 'Invalid password.';
-    echo $db_hash;
+    #echo 'Invalid password.';
+    header("Location: http://$_SERVER[HTTP_HOST]/lib/login.php?fail=1"); /* Redirect browser */
+    #echo $db_hash;
 }

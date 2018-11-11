@@ -14,9 +14,12 @@
     <form class="form-signin" _lpchecked="1" action="takelogin.php" method="post">
         <img class="mb-4" src="../images/logobot.svg" alt="" width="150" height="150">
         <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-        <label for="inputEmail" class="sr-only">Email address</label>
+        <?php
+        if ($_GET['fail'] == 1){
+            echo "<p class=\"bg-danger border-danger\">Invalid username or password</p>";
+        }
+        ?>
         <input type="username" name="username" class="form-control" placeholder="Username" required="" autofocus="" autocomplete="off">
-        <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" name="password" class="form-control" placeholder="Password" required="" autocomplete="off">
         <div class="checkbox mb-3">
             <label>
