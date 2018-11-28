@@ -15,7 +15,7 @@
 </script>
 <div class="container">
     <div class="container">
-<div class="row">
+<div class="row rowmid">
     <div class="jumbotron widget col-xs-6 col-sm-3">
         <h3>CPU</h3>
         <hr class="my-4">

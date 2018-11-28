@@ -9,4 +9,7 @@
 
 
 
-echo password_hash("KZWD9RHmwR478Lrm", PASSWORD_DEFAULT);
+echo password_hash("tibi123", PASSWORD_DEFAULT);
+
+
+print_r(scandir(session_save_path()));

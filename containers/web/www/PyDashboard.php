@@ -30,6 +30,7 @@ $static_link = $actual_link;
     <title>System Overview</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/costum.css">
+    <script>element.autocomplete = isGoogleChrome() ? 'disabled' :  'off';</script>
 
 </head>
 <body>
@@ -52,17 +53,17 @@ $static_link = $actual_link;
                 switch ($_GET['sub']) {
 
                     case "main":
-                        echo "<h1 class='pagetitle'> Dashboard </h1><hr class=\"my-4\">";
+                        echo "<h1 class='pagetitle'> Dashboard </h1><hr class='my-4'>";
                         include("templates/Dashboard/dashboard-ui-main.php");
                         break;
 
                     case "devices":
-                        echo "<h1 class='pagetitle'> Devices </h1><hr class=\"my-4\">";
+                        echo "<h1 class='pagetitle'> Devices </h1><hr class='my-4'>";
                         include("templates/Dashboard/dashboard-ui-devices.php");
                         break;
 
                     case "reports":
-                        echo "<h1 class='pagetitle'> Reports </h1><hr class=\"my-4\">";
+                        echo "<h1 class='pagetitle'> Reports </h1><hr class='my-4'>";
                         include("templates/Dashboard/dashboard-ui-reports.php");
                         break;
 
@@ -72,6 +73,8 @@ $static_link = $actual_link;
 
 
                 }
+            } else {
+                include ("templates/error.php");
             }
         }
         if ($_GET['pane'] == "settings") {
@@ -79,17 +82,17 @@ $static_link = $actual_link;
                 switch ($_GET['sub']) {
 
                     case "ap":
-                        echo "<h1 class='pagetitle'> Wifi AP </h1>";
+                        echo "<h1 class='pagetitle'> Connections </h1><hr class='my-4'>";
                         include("templates/settings/settings-ui-wifi.php");
                         break;
 
                     case "db":
-                        echo "<h1 class='pagetitle'> Database Settings </h1>";
+                        echo "<h1 class='pagetitle'> Database Settings </h1><hr class='my-4'>";
                         include("templates/settings/settings-ui-database.php");
                         break;
 
                     case "um":
-                        echo "<h1 class='pagetitle'> User Management </h1>";
+                        echo "<h1 class='pagetitle'> User Management </h1><hr class='my-4'>";
                         include("templates/settings/settings-ui-users.php");
                         break;
 
@@ -99,6 +102,8 @@ $static_link = $actual_link;
 
 
                 }
+            } else {
+                include ("templates/error.php");
             }
         }
         ?>

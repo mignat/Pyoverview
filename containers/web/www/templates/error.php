@@ -8,7 +8,7 @@
 if (isset($_GET['errortype'])) {
     $error_type = $_GET['errortype'];
     }else{
-    $error_type = "Unknown Error";
+    $error_type = "404 Not Found";
 }
 
 switch($error_type) {
@@ -18,8 +18,11 @@ switch($error_type) {
     case "PHP_Error":
         $message = "PHP Code error, possible BUG !";
         break;
+    case "Access_denied":
+        $message = "You lack the privileges to access this page !";
+        break;
     default:
-        $message = "Lazy coding !";
+        $message = "The page you are looking for ";
 }
 ?>
 <html>

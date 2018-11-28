@@ -15,10 +15,25 @@
     margin-top: 200px;
 
 }
-.row {
+.rowmid {
     justify-content: space-between;
     text-align: center;
 }
+.status_widget {
+    text-align: center;
+}
+.inline {
+    display: inline;
+}
+
 .pagetitle {
     margin-top: 30px;
+}
+
+label {
+    margin-top: 24px;
+}
+
+form {
+    margin-bottom: 30px;
 }
