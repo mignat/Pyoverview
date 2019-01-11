@@ -7,12 +7,7 @@
  */
 ?>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script>
-    window.setInterval(function () {
-        $('#cpu-widget').load('lib/systeminfo.php?type=cpu');
-        $('#ram-widget').load('lib/systeminfo.php?type=ram');
-    }, 500);
-</script>
+<script src="../../scripts/dashboard.js"></script>
 <div class="container">
     <div class="container">
 <div class="row rowmid">
