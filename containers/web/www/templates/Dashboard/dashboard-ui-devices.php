@@ -36,7 +36,7 @@
 							<div class='btn-group'>
 							    <div><a class='btn btn-primary btn-sm' href=\"viewStation.php.station={$row['name']}\">View</a> </div>
 							    <div><a class='btn btn-primary btn-sm' href=\"editStation.php?station={$row['name']}\">Edit</a></div>
-							    <div><button type=\"button\" class=\"btn btn-danger btn-sm\" data-container=\"body\" data-toggle=\"popover\" data-trigger=\"focus\" data-placement=\"right\" data-html=\"true\" title=\"<b>Are you sure ?</b>\" data-content=\"<div><button class='btn btn-danger btn-sm btn-block' onClick='' type='button'>Confirm</button></div>\">Remove</button></div>
+							    <div><button type=\"button\" class=\"btn btn-danger btn-sm\" data-container=\"body\" data-toggle=\"popover\" data-trigger=\"focus\" data-placement=\"right\" data-html=\"true\" title=\"<b>Are you sure ?</b>\" data-content=\"<div><a class='btn btn-danger btn-sm btn-block' href='/lib/be_devices.php?delete={$row['name']}'>Confirm</button></div>\">Remove</button></div>
 							    </div>
                             </td>
 						</tr>";

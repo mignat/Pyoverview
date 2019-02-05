@@ -17,3 +17,8 @@ services:
     build: ./containers/web
     ports:
     - "9090:80"
+
+#  grifana:
+#    image: grafana/grafana
+#    ports:
+#    - "3000:3000"

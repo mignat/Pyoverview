@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="@localhost" uuid="5876d1d6-405b-4ac0-bd2d-acda7053a483">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" family="MARIADB" exact-version="0.0" />
+    <data-source name="pycom_dashboard@localhost" uuid="ce572495-c168-4235-8c03-77ee2fb59ee7">
+      <database-info product="MySQL" version="8.0.13" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.46 ( Revision: 9cc87a48e75c2d2e87c1a293b2862ce651cb256e )" family="MYSQL" exact-version="8.0.13">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact" />
       <secret-storage>master_key</secret-storage>
-      <first-sync>true</first-sync>
       <user-name>root</user-name>
-    </data-source>
-    <data-source name="mysql@172.19.0.3" uuid="6c6a5cdc-0f28-4225-ae68-c79db2554da5">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" family="MYSQL" exact-version="0.0" />
-      <secret-storage>master_key</secret-storage>
-      <first-sync>true</first-sync>
-      <user-name>root</user-name>
+      <introspection-schemas>*:@</introspection-schemas>
     </data-source>
   </component>
 </project>
