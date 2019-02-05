@@ -96,6 +96,10 @@ $static_link = $actual_link;
                         include("templates/settings/settings-ui-users.php");
                         break;
 
+                    case "test":
+                        echo "<h1 class='pagetitle'> User Management TEST </h1><hr class='my-4'>";
+                        include("templates/settings/settings-ui-users-add.php");
+                        break;
                     default:
                         include("templates/error.php");
                         break;

@@ -6,8 +6,10 @@ declare(strict_types = 1);
  * Date: 13/08/2018
  * Time: 22:31
  */
+//error_reporting(E_ALL);
+//ini_set('display_errors', 'on');
 
-function sqlexec($q, $num=null)
+function sqlexec($q, $num=null, $no_output=false)
 {
     $servername = "pyoverview_db_1";
     $username = "root";
@@ -24,17 +26,18 @@ function sqlexec($q, $num=null)
 
     $result = $conn->query($q);
 
-    while($row = $result->fetch_array())
-    {
-        $rows[] = $row;
+    if ($no_output == false) {
+
+        while ($row = $result->fetch_array()) {
+            $rows[] = $row;
+        }
+        $result->close();
+        if (isset($num)) {
+            return $rows[$num];
+        } else {
+            return $rows;
+        }
+    }else {
+        return "Success!";
     }
-
-    $result->close();
-
-    if(isset($num)){
-        return $rows[$num];
-    }else{
-        return $rows;
-    }
-
 }
