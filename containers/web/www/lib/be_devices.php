@@ -8,6 +8,12 @@
 
 require_once("sqlQuery.php");
 
+if ($_SESSION['privileges'] != 1) {
+    include("../error.php?errortype=Access_denied");
+    exit();
+
+}
+
 if (isset($_GET['delete'])) {
     $del = $_GET['delete'];
     $query = "DELETE FROM `pyover_devices` WHERE `name`='{$del}';";

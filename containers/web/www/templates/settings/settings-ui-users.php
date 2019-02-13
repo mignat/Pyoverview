@@ -10,6 +10,8 @@ if (!isset($_SESSION['user_id'])) {
 }
 require_once("lib/sqlQuery.php");
 $user_list = sqlexec("SELECT * FROM `pyover_users`");
+//error_reporting(E_ALL);
+//ini_set('display_errors', 'on');
 
 ?>
 <div class="container">
