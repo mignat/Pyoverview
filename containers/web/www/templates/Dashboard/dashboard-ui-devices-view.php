@@ -10,11 +10,13 @@ if ($_SESSION['privileges'] != 1) {
     header("Location: http://$_SERVER[HTTP_HOST]/templates/error.php?errortype=Access_denied"); /* Redirect browser */
     exit();
 }
+include_once ("../../lib/sqlQuery.php")
+$query = sqlexec("SELECT * FROM `pyover_devices` where name = '${$_SESSION['']}'")
 ?>
 <script src="../../scripts/settings-ui-users.js"></script>
-<button type="button" class="btn btn-primary btn-dark" data-toggle="modal" data-target="#useraddModal" >Add User</button>
+<button type="button" class="btn btn-primary btn-dark" data-toggle="modal" data-target="#viewDeviceModal" >View</button>
 
-<div class="modal fade" id="useraddModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="viewDeviceModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -27,7 +29,6 @@ if ($_SESSION['privileges'] != 1) {
                 <form id="useraddForm">
                     <div class="form-group">
                         <label for="recipient-name" class="col-form-label">Username:</label>
-                        <input type="text" class="form-control" name="username">
                         <label for="recipient-name" class="col-form-label">Password:</label>
                         <input type="password" class="form-control" name="password">
                         <label for="recipient-name" class="col-form-label">User Type</label>
