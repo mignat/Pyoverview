@@ -16,12 +16,8 @@ $db_hash = sqlexec("SELECT * FROM `pyover_users` WHERE username=\"$login_usernam
 if (password_verify($login_password, $db_hash["password_hash"])) {
     echo 'Password is valid !';
     $_SESSION['user_id'] = $login_username;
-    $_SESSION['full_name']= $db_hash["full_name"];
-    if ($db_hash['privileges'] == 1){
-        $_SESSION['permissions']= 1;
-    } else {
-        $_SESSION['permissions']= 0;
-    }
+    $_SESSION['full_name'] = $db_hash["full_name"];
+    $_SESSION['permissions'] = $db_hash['privileges'];
     header("Location: http://$_SERVER[HTTP_HOST]/PyDashboard.php"); /* Redirect browser */
     exit();
 } else {

@@ -1,13 +1,11 @@
 <?php
-if (!isset($_SESSION['user_id'])) {
-    header("Location: http://$_SERVER[HTTP_HOST]/lib/login.php"); /* Redirect browser */
-    exit();
     if ($_SESSION['privileges'] != 1) {
         include("../error.php?errortype=Access_denied");
         exit();
 
     }
 }
+
 require_once("lib/sqlQuery.php");
 $user_list = sqlexec("SELECT * FROM `pyover_users`");
 //error_reporting(E_ALL);
@@ -16,7 +14,10 @@ $user_list = sqlexec("SELECT * FROM `pyover_users`");
 ?>
 <div class="container">
     <div class="container-fluid">
-        <button class="btn btn-dark align-items-end " type="create_user"> Create User</button>
+
+        <?php include("settings-ui-users-add.php"); ?>
+        <?php echo $_SESSION['permissions']; ?>
+
     </div>
     <hr class='my-4'>
     <script>
