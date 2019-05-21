@@ -5,15 +5,9 @@
  * Date: 05/02/2019
  * Time: 12:54
  */
-if ($_SESSION['privileges'] != 1) {
-    #include("../error.php?errortype=Access_denied");
-    header("Location: http://$_SERVER[HTTP_HOST]/templates/error.php?errortype=Access_denied"); /* Redirect browser */
-    exit();
-}
 ?>
 <script src="../../scripts/settings-ui-users.js"></script>
 <button type="button" class="btn btn-primary btn-dark" data-toggle="modal" data-target="#useraddModal" >Add User</button>
-
 <div class="modal fade" id="useraddModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -28,6 +22,7 @@ if ($_SESSION['privileges'] != 1) {
                     <div class="form-group">
                         <label for="recipient-name" class="col-form-label">Username:</label>
                         <input type="text" class="form-control" name="username">
+
                         <label for="recipient-name" class="col-form-label">Password:</label>
                         <input type="password" class="form-control" name="password">
                         <label for="recipient-name" class="col-form-label">User Type</label>
@@ -39,7 +34,6 @@ if ($_SESSION['privileges'] != 1) {
                         </select>
                     </div>
                     <div class="form-group">
-
                     </div>
                 </form>
             </div>

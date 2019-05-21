@@ -14,6 +14,7 @@ require_once("sqlQuery.php");
 //error_reporting(E_ALL);
 //ini_set('display_errors', 'on');
 
+
 if ($_SESSION['privileges'] != 1) {
     include("../error.php?errortype=Access_denied");
     exit();

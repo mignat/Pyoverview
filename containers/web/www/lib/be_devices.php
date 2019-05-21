@@ -6,11 +6,6 @@
  * Time: 13:37
  */
 
-if ($_SESSION['privileges'] != 1) {
-    #include("../error.php?errortype=Access_denied");
-    header("Location: http://$_SERVER[HTTP_HOST]/templates/error.php?errortype=Access_denied"); /* Redirect browser */
-    exit();
-}
 require_once("sqlQuery.php");
 
 if ($_SESSION['privileges'] != 1) {
