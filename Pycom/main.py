@@ -12,6 +12,9 @@ tempSave = failSafeCreator("temp.recover")
 
 
 
+
+gpio32 = machine.Pin("P19", mode=Pin.OUT) # pin used to sense wifi status 
+
 #------------------------------------------------------------------------------
 
 
@@ -29,7 +32,10 @@ else:
 
 try:
     while True:
-        if not wlan.isconnected():
+        if wlan.isconnected():
+            gpio32(True)
+        else:
+            gpio32(False)
             tempSave.saveState(str(temp))
             time.sleep(2)
             machine.reset()
