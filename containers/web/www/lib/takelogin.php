@@ -19,6 +19,7 @@ if (password_verify($login_password, $db_hash["password_hash"])) {
     $_SESSION['full_name'] = $db_hash["full_name"];
     $_SESSION['permissions'] = $db_hash['privileges'];
     header("Location: http://$_SERVER[HTTP_HOST]/PyDashboard.php"); /* Redirect browser */
+    echo "PRIV: {$_SESSION['permissions']}";
     exit();
 } else {
     #echo 'Invalid password.';

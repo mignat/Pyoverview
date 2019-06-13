@@ -1,10 +1,4 @@
 <?php
-    if ($_SESSION['privileges'] != 1) {
-        include("../error.php?errortype=Access_denied");
-        exit();
-
-    }
-}
 
 require_once("lib/sqlQuery.php");
 $user_list = sqlexec("SELECT * FROM `pyover_users`");
@@ -16,7 +10,6 @@ $user_list = sqlexec("SELECT * FROM `pyover_users`");
     <div class="container-fluid">
 
         <?php include("settings-ui-users-add.php"); ?>
-        <?php echo $_SESSION['permissions']; ?>
 
     </div>
     <hr class='my-4'>

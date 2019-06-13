@@ -62,6 +62,11 @@ $static_link = $actual_link;
                         include("templates/Dashboard/dashboard-ui-devices.php");
                         break;
 
+                    case "audit_log":
+                        echo "<h1 class='pagetitle'> Audit </h1><hr class='my-4'>";
+                        include("templates/Dashboard/dashboard-ui-audit.php");
+                        break;
+
                     case "reports":
                         echo "<h1 class='pagetitle'> Reports </h1><hr class='my-4'>";
                         include("templates/Dashboard/dashboard-ui-reports.php");

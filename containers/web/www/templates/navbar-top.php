@@ -42,7 +42,7 @@ session_start();
                         <?php echo $_SESSION['full_name'];?>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item">Admin:<?php echo $_SESSION['privileges'];?></a>
+                        <a class="dropdown-item">Admin:<?php echo $_SESSION['permissions']; ?></a>
                         <a class="dropdown-item" href="#">Profile</a>
 
                         <div class="dropdown-divider"></div>

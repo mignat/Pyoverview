@@ -18,19 +18,23 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form id="useraddForm">
+                <form id="useraddForm" action="../../lib/be_users.php?operation=add" method="post">
                     <div class="form-group">
                         <label for="recipient-name" class="col-form-label">Username:</label>
-                        <input type="text" class="form-control" name="username">
+                        <input type="text" class="form-control" name="user_username">
+
+                        <label for="recipient-name" class="col-form-label">Full Name:</label>
+                        <input type="text" class="form-control" name="user_fullname">
 
                         <label for="recipient-name" class="col-form-label">Password:</label>
-                        <input type="password" class="form-control" name="password">
+                        <input type="password" class="form-control" name="user_password">
+
                         <label for="recipient-name" class="col-form-label">User Type</label>
-                        <select class="custom-select" id="inputGroupSelect01">
+                        <select class="custom-select" name="user_type">
                             <option selected>Choose account type ...</option>
-                            <option value="1">Viewer</option>
-                            <option value="2">Admin</option>
-                            <option value="3">API</option>
+                            <option value="0">Viewer</option>
+                            <option value="1">Admin</option>
+                            <option value="2">API</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -39,7 +43,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" id="user-create-submit" class="btn btn-primary">Create</button>
+                <button type="submit" form="useraddForm" id="user-create-submit" class="btn btn-primary">Create</button>
             </div>
         </div>
     </div>

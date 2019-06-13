@@ -14,6 +14,7 @@
             Devices
             <span class="badge badge-pill bg-light align-text-bottom"><?php echo count($device_list);?></span>
         </a>
+        <a class="nav-link" href="<?php echo "$actual_link?pane=dashboard&sub=audit_log"; ?>">Audit Log</a>
         <a class="nav-link" href="<?php echo "$actual_link?pane=dashboard&sub=reports";?>">Reports</a>
     </nav>
 </div>
