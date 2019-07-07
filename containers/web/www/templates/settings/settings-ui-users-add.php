@@ -5,6 +5,12 @@
  * Date: 05/02/2019
  * Time: 12:54
  */
+
+if ($_SESSION['permissions'] != 1) {
+include("../error.php?errortype=Access_denied");
+header("Location: http://$_SERVER[HTTP_HOST]/templates/error.php?errortype=Access_denied"); /* Redirect browser */
+exit();
+
 ?>
 <script src="../../scripts/settings-ui-users.js"></script>
 <button type="button" class="btn btn-primary btn-dark" data-toggle="modal" data-target="#useraddModal" >Add User</button>
