@@ -30,8 +30,6 @@ $static_link = $actual_link;
     <title>System Overview</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/costum.css">
-    <script>element.autocomplete = isGoogleChrome() ? 'disabled' :  'off';</script>
-
 </head>
 <body>
 
@@ -99,6 +97,10 @@ $static_link = $actual_link;
                     case "um":
                         echo "<h1 class='pagetitle'> User Management </h1><hr class='my-4'>";
                         include("templates/settings/settings-ui-users.php");
+                        break;
+                    case "system":
+                        echo "<h1 class='pagetitle'> System Management </h1><hr class='my-4'>";
+                        include("templates/settings/settings-ui-system.php");
                         break;
 
                     case "test":

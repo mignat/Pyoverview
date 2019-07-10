@@ -5,8 +5,6 @@
  * Date: 12/09/2018
  * Time: 15:26
  */
-
-session_start();
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -31,6 +29,7 @@ session_start();
                     <a class="dropdown-item" href="<?php echo "$actual_link?pane=settings&sub=um";?>">User Management</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="<?php echo "$actual_link?pane=settings&sub=db";?>">Database Management</a>
+                    <a class="dropdown-item" href="<?php echo "$actual_link?pane=settings&sub=system";?>">System Management</a>
                 </div>
             </li>
         </ul>
