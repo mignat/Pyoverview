@@ -10,9 +10,11 @@ if (isset($_GET['operation'])) {
     switch ($_GET['operation']) {
 
         case 'reboot':
-            exec()
-
-
+            exec("sudo reboot");
+            break;
+        default:
+            echo "Not defined !";
+            break;
 
     }
 }
