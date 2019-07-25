@@ -17,12 +17,32 @@ if ($_SESSION['permissions'] != 1) {
             }
         });
     }
+    function startAjax() {
+        $.ajax({
+            type: "GET",
+            url: "../../lib/be_connections.php?operation=restart&service=hostapd",
+            data: "operation=start&service=hostapd",
+            success: function(msg){
+                alert( "Data Saved: " + msg );
+            }
+        });
+    }
+    function stopAjax() {
+        $.ajax({
+            type: "GET",
+            url: "../../lib/be_connections.php?operation=restart&service=hostapd",
+            data: "operation=stop&service=hostapd",
+            success: function(msg){
+                alert( "Data Saved: " + msg );
+            }
+        });
+    }
 </script>
 
 
-
-
-<button type="button" onclick="restartAjax()" class="btn btn-primary btn-danger">Restart</button>
+<button type="button" onclick="startAjax()" class="btn btn-primary btn-success">Start</button>
+<button type="button" onclick="stopAjax()" class="btn btn-primary btn-danger">Restart</button>
+<button type="button" onclick="restartAjax()" class="btn btn-primary btn-warning">Restart</button>
 <button type="button" class="btn btn-primary btn-dark" data-toggle="modal" data-target="#ModalWifi" >Settings</button>
 <div class="modal fade" id="ModalWifi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
