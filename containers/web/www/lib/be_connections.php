@@ -8,10 +8,6 @@
 
 include_once("sqlQuery.php");
 
-if (!isset($_SESSION['user_id'])) {
-    header("Location: http://$_SERVER[HTTP_HOST]/templates/error.php?errortype=Access_denied"); /* Redirect browser */
-    exit();
-}
 
 function serviceOPS($operation,$service)
 {
