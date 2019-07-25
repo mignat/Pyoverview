@@ -6,14 +6,14 @@ declare(strict_types = 1);
  * Date: 13/08/2018
  * Time: 22:31
  */
-error_reporting(E_ALL);
-ini_set('display_errors', 'on');
+//error_reporting(E_ALL);
+//ini_set('display_errors', 'on');
 
 function sqlexec($q, $num=null, $no_output=false)
 {
-    $servername = "pyoverview_db_1";
+    $servername = "localhost";
     $username = "root";
-    $password = "root";
+    $password = "mensmentis";
     $dbname = "pycom_dashboard";
 
 
