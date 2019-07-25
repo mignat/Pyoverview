@@ -8,7 +8,7 @@
 if (isset($_GET['errortype'])) {
     $error_type = $_GET['errortype'];
     }else{
-    $error_type = "404 Not Found";
+    $error_type = "Access_denied";
 }
 
 switch($error_type) {
