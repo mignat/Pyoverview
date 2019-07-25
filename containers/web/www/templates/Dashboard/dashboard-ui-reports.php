@@ -9,7 +9,7 @@
 
 ?>
 
-<script src="'../../scripts/Chart.bundle'"></script>
+<script src="../../scripts/Chart.bundle.js"></script>
 <script>
 
     var ctx = $('#myChart');
