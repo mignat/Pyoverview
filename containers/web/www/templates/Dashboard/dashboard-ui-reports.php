@@ -10,7 +10,7 @@
 ?>
 
 <script src="../../scripts/Chart.bundle.js"></script>
-<div class="container">
+<div class="container" style="max-height: 100px">
 <canvas id="myChart" width="400" height="400"></canvas>
 </div>
 <script>
