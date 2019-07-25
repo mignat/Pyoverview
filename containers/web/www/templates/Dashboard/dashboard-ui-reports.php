@@ -10,6 +10,9 @@
 ?>
 
 <script src="../../scripts/Chart.bundle.js"></script>
+
+<canvas id="myChart" width="400" height="400"></canvas>
+
 <script>
 
     var ctx = $('#myChart');
@@ -53,4 +56,3 @@
 
 
 </script>
-<canvas id="myChart" width="400" height="400"></canvas>
