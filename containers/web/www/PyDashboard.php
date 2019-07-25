@@ -86,7 +86,7 @@ $static_link = $actual_link;
 
                     case "ap":
                         echo "<h1 class='pagetitle'> Connections </h1><hr class='my-4'>";
-                        include("templates/settings/settings-ui-wifi.php");
+                        include("templates/settings/settings-ui-connections.php");
                         break;
 
                     case "db":
