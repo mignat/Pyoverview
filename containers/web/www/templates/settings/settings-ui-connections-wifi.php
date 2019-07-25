@@ -5,6 +5,19 @@ if ($_SESSION['permissions'] != 1) {
     exit();
 }
 ?>
+
+<script>
+
+    $('restart_button').click(function () {
+        $.load("../../lib/be_connections.php?operation=restart&service=hostapd")
+    })
+
+</script>
+
+
+
+
+<button type="button" id="restart_button" class="btn btn-primary btn-danger">Restart</button>
 <button type="button" class="btn btn-primary btn-dark" data-toggle="modal" data-target="#ModalWifi" >Settings</button>
 <div class="modal fade" id="ModalWifi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
