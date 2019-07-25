@@ -6,7 +6,7 @@
  * Time: 15:30
  */
 if ($_SESSION['permissions'] != 1) {
-    include ("../error.php");
+    include ("templates/error.phpp");
     #header("Location: http://$_SERVER[HTTP_HOST]/templates/error.php?errortype=Access_denied"); /* Redirect browser */
     exit();
 }
