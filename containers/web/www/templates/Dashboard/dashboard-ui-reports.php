@@ -9,10 +9,9 @@
 
 ?>
 
-
+<script src="'../../scripts/Chart.bundle'"></script>
 <script>
 
-    var Chart = require('../../scripts/Chart.bundle');
     var ctx = $('#myChart');
     var myChart = new Chart(ctx, {
         type: 'bar',
