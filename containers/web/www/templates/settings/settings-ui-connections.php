@@ -33,7 +33,7 @@ if ($_SESSION['permissions'] != 1) {
             </tr>
             <tr>
                 <td>IP:</td>
-                <td id="ap_ip"></td>
+                <td id="ap_ip">192.168.4.1</td>
             </tr>
             </tbody>
         </table>
