@@ -29,6 +29,9 @@ if (isset($_GET['operation'])) {
             $service = $_GET['service'];
             $exec = serviceOPS("start", $service);
             break;
+        case "timestamp":
+            $time = date(format,[timestamp]);
+            echo $time;
 
         default:
             echo "Use type argument to get info";
