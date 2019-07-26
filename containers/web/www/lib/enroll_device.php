@@ -15,6 +15,8 @@ $enroll_sql = "INSERT INTO `pyover_devices` (`UID`, `name`, `location`,`Descript
 
 $enroll_query = sqlexec($enroll_sql);
 
+echo $enroll_query;
+
 
 
 
