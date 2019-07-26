@@ -24,8 +24,12 @@ function sqlexec($q, $num=null, $no_output=false)
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
-
-    $result = $conn->query($q) or die("fail");
+try {
+    $result = $conn->query($q);
+}catch (Exception $e){
+        echo "ERROR: ", $e.getMessage(), "\n";
+        exit(1);
+}
 
         if ($no_output == false) {
 
