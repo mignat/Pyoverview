@@ -11,7 +11,7 @@ if ($_SESSION['permissions'] != 1) {
     exit();
 }
 
-?>
 
-<iframe frameborder="0" id="monitoring_frame"
-        src="../../phpmyadmin/index.php"></iframe>
+
+echo "<iframe frameborder=\"0\" id=\"monitoring_frame\"";
+echo "src=\"http://$_SERVER[HTTP_HOST]/phpmyadmin/index.php\"></iframe>";
