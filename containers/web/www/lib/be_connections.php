@@ -32,9 +32,9 @@ if (isset($_GET['operation'])) {
         case "timestamp":
             $time = date(format,[timestamp]);
             echo $time;
-
+            break;
         default:
-            echo "Use type argument to get info";
+            echo "Use operation argument to get info";
             break;
     }
 }
