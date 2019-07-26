@@ -44,5 +44,7 @@ function sqlexec($q, $num=null, $no_output=false)
                 return $rows;
             }
         }
+    }else{
+        return 1;
     }
 }
