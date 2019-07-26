@@ -13,7 +13,7 @@ $stationDescription = $data['STATION']['description'];
 
 $enroll_sql = "INSERT INTO `pyover_devices` (`UID`, `name`, `location`,`Description`, `status`) VALUES (uuid(), \'$stationName\', \'$stationLocation\', \'$stationDescription\', \'N/A\')";
 
-$enroll_query = sqlexec($enroll_sql);
+$enroll_query = sqlexec($enroll_sql, $no_output=true);
 
 echo $enroll_query;
 
