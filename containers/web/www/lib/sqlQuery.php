@@ -17,7 +17,7 @@ function sqlexec($q, $num = null, $no_output = false)
     $password = "mensmentis";
     $dbname = "pycom_dashboard";
 
-
+    mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
