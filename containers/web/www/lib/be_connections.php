@@ -30,8 +30,7 @@ if (isset($_GET['operation'])) {
             $exec = serviceOPS("start", $service);
             break;
         case "timestamp":
-            $time = date(format,[timestamp]);
-            echo $time;
+            echo time();
             break;
         default:
             echo "Use operation argument to get info";
