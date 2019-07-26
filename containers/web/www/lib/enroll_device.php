@@ -10,7 +10,9 @@ $data = json_decode($json,true);
 
 $enroll_sql = "INSERT INTO `pyover_devices` (`UID`, `name`, `location`,`Description`, `status`) VALUES (uuid(), \'$data['STATION']['name']\', \'$data['STATION']['location']\', \'$data['STATION']['description']\', \'N/A\')";
 
-enroll_query = sqlexec($enroll_sql);
+$enroll_query = sqlexec($enroll_sql);
+
+
 
 
 
