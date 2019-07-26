@@ -10,7 +10,7 @@ $data = json_decode($json,true);
 //$stationLocation = $data['STATION']['location'];
 //$stationDescription = $data['STATION']['description'];
 
-sqlexec("INSERT INTO `pyover_devices` (`UID`, `name`, `location`, `Description`, `status`, `last_contact`) VALUES (uuid(), \'Pytest\', \'Sala 1\', \'CEVA\', \'N/A\', NULL)", null,true);
+sqlexec("INSERT INTO `pyover_devices` (`UID`, `name`, `location`, `Description`, `status`, `last_contact`) VALUES (uuid(), 'Pytest', 'Sala 1', 'CEVA', 'N/A', NULL)", null,true);
 
 echo "Done";
 
