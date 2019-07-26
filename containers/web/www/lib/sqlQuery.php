@@ -24,7 +24,7 @@ function sqlexec($q, $num=null, $no_output=false)
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $result = $conn->query($q) or die($dbname);
+    $result = $conn->query($q) or die("sqlQuery: Failed ");
 
     if ($no_output == false) {
 
