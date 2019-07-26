@@ -17,10 +17,6 @@ function sqlexec($q, $num=null, $no_output=false)
     $password = "mensmentis";
     $dbname = "pycom_dashboard";
 
-    function except()
-    {
-        $status = 1;
-    }
 
 // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -29,9 +25,8 @@ function sqlexec($q, $num=null, $no_output=false)
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $result = $conn->query($q) or except();
+    $result = $conn->query($q) or die(1);
 
-    if ($status != 1) {
         if ($no_output == false) {
 
             while ($row = $result->fetch_array()) {
@@ -44,7 +39,4 @@ function sqlexec($q, $num=null, $no_output=false)
                 return $rows;
             }
         }
-    }else{
-        return 1;
-    }
 }
