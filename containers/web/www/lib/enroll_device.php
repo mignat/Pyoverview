@@ -10,7 +10,7 @@ $stationName = $data['STATION']['name'];
 $stationLocation = $data['STATION']['location'];
 $stationDescription = $data['STATION']['description'];
 
-$uuid = sqlexec("select uuid()")[1]['uuid()'];
+$uuid = sqlexec("select uuid()")[0]['uuid()'];
 
 echo $uuid;
 
