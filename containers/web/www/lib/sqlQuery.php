@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 /**
  * Created by PhpStorm.
  * User: mariusignat
@@ -8,9 +8,9 @@ declare(strict_types = 1);
  */
 //error_reporting(E_ALL);
 //ini_set('display_errors', 'on');
-$status=0;
+$status = 0;
 
-function sqlexec($q, $num=null, $no_output=false)
+function sqlexec($q, $num = null, $no_output = false)
 {
     $servername = "localhost";
     $username = "root";
@@ -24,22 +24,24 @@ function sqlexec($q, $num=null, $no_output=false)
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
-try {
+
     $result = $conn->query($q);
-}catch (Exception $e){
-        return $e;
-}
 
-        if ($no_output == false) {
+    if ($conn->connect_error) {
+        return $conn->connect_error;
+    }
 
-            while ($row = $result->fetch_array()) {
-                $rows[] = $row;
-            }
-            $result->close();
-            if (isset($num)) {
-                return $rows[$num];
-            } else {
-                return $rows;
-            }
+
+    if ($no_output == false) {
+
+        while ($row = $result->fetch_array()) {
+            $rows[] = $row;
         }
+        $result->close();
+        if (isset($num)) {
+            return $rows[$num];
+        } else {
+            return $rows;
+        }
+    }
 }

@@ -16,10 +16,7 @@ echo "$uuid\n";
 
 $enroll_query = sqlexec("INSERT INTO `pyover_devices` (`UID`, `name`, `location`, `Description`, `status`, `last_contact`) VALUES ('$uuid', '$stationName', '$stationLocation', '$stationDescription', 'N/A', NULL)", null,true);
 
-echo "status:",$enroll_query;
 
-
-echo "Done";
 
 
 
