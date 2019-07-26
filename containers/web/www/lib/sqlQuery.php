@@ -27,8 +27,7 @@ function sqlexec($q, $num=null, $no_output=false)
 try {
     $result = $conn->query($q);
 }catch (Exception $e){
-        echo "ERROR: ", $e.getMessage(), "\n";
-        exit(1);
+        return $e;
 }
 
         if ($no_output == false) {
