@@ -12,11 +12,14 @@ $stationDescription = $data['STATION']['description'];
 
 $uuid = sqlexec("select uuid()")[0]['uuid()'];
 
-echo "$uuid\n";
 
 $enroll_query = sqlexec("INSERT INTO `pyover_devices` (`UID`, `name`, `location`, `Description`, `status`, `last_contact`) VALUES ('$uuid', '$stationName', '$stationLocation', '$stationDescription', 'N/A', NULL)", null,true);
 
-echo $enroll_query;
+
+
+if ($enroll_query != true) {
+    echo "$uuid\n";
+}
 
 
 
