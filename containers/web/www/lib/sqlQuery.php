@@ -8,6 +8,7 @@ declare(strict_types = 1);
  */
 //error_reporting(E_ALL);
 //ini_set('display_errors', 'on');
+$status=0;
 
 function sqlexec($q, $num=null, $no_output=false)
 {
@@ -16,6 +17,10 @@ function sqlexec($q, $num=null, $no_output=false)
     $password = "mensmentis";
     $dbname = "pycom_dashboard";
 
+    function except()
+    {
+        $status = 1;
+    }
 
 // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -24,20 +29,20 @@ function sqlexec($q, $num=null, $no_output=false)
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $result = $conn->query($q) or die("sqlQuery: Failed ");
+    $result = $conn->query($q) or except();
 
-    if ($no_output == false) {
+    if ($status != 1) {
+        if ($no_output == false) {
 
-        while ($row = $result->fetch_array()) {
-            $rows[] = $row;
+            while ($row = $result->fetch_array()) {
+                $rows[] = $row;
+            }
+            $result->close();
+            if (isset($num)) {
+                return $rows[$num];
+            } else {
+                return $rows;
+            }
         }
-        $result->close();
-        if (isset($num)) {
-            return $rows[$num];
-        } else {
-            return $rows;
-        }
-    }else {
-        return "Success!";
     }
 }
