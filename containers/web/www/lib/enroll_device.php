@@ -2,7 +2,7 @@
 require("sqlQuery.php");
 
 
-if (isset($_GET['verify_uuid']){
+if (isset($_GET['verify_uuid'])){
     $uuid = $_GET['verify_uuid'];
     $query = sqlexec("SELECT * FROM `pyover_devices` WHERE `UID`='$uuid'");
     echo $query[0]["name"];
