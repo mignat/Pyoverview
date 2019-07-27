@@ -4,10 +4,10 @@ require("sqlQuery.php");
 
 if (isset($_GET['verify_uuid']){
     $uuid = $_GET['verify_uuid'];
-    $query = sqlexec("SELECT * FROM `pyover_devices` WHERE `UID`=$uuid");
+    $query = sqlexec("SELECT * FROM `pyover_devices` WHERE `UID`='$uuid'");
     echo $query[0]["name"];
 
-}else {
+}else{
 
     $json = file_get_contents('php://input');
     $data = json_decode($json, true);
