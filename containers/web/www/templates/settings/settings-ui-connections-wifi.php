@@ -10,21 +10,21 @@ if ($_SESSION['permissions'] != 1) {
     function restartAjax() {
         $.ajax({
             type: "GET",
-            url: "../../lib/be_connections.php?operation=restart&service=hostapd",
+            url: "../../lib/be_connections.php",
             data: "operation=restart&service=hostapd",
         });
     }
     function startAjax() {
         $.ajax({
             type: "GET",
-            url: "../../lib/be_connections.php?operation=restart&service=hostapd",
+            url: "../../lib/be_connections.php",
             data: "operation=start&service=hostapd",
         });
     }
     function stopAjax() {
         $.ajax({
             type: "GET",
-            url: "../../lib/be_connections.php?operation=restart&service=hostapd",
+            url: "../../lib/be_connections.php",
             data: "operation=stop&service=hostapd",
         });
     }

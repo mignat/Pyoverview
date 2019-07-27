@@ -9,17 +9,27 @@ function getserviceStatus($service)
         return "Error / Not Found";
     }
 }
+function getAdaptorIP($interafce){
+    $x = shell_exec("ip addr show $interafce | awk '$1 == \"inet\" {gsub(/\/.*$/, \"\", $2); print $2}'");
+    return $x;
+}
 
 if (isset($_GET['type'])) {
     switch ($_GET['type']) {
 
-        case "wifi":
+        case "wifiService":
             $status = getserviceStatus("hostapd");
             echo "$status";
+            $ip = getAdaptorIP("wlan0");
+            echo "$ip";
             break;
         case "vpn":
             $status = getserviceStatus("openvpn");
             echo "$status";
+            break;
+        case "wifiIP":
+            $ip = getAdaptorIP("wlan0");
+            echo "$ip";
             break;
 
         default:

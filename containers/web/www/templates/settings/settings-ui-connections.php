@@ -15,7 +15,8 @@ if ($_SESSION['permissions'] != 1) {
 <script>
 
     window.setInterval(function(){
-        $('#ap_status').load('../../ajax/connections.php?type=wifi');
+        $('#ap_status').load('../../ajax/connections.php?type=wifiStatus');
+        $('#ap_ip').load('../../ajax/connections.php?type=wifiIP');
     }, 1000);
 
 </script>
@@ -33,7 +34,7 @@ if ($_SESSION['permissions'] != 1) {
             </tr>
             <tr>
                 <td>IP:</td>
-                <td id="ap_ip">192.168.4.1</td>
+                <td id="ap_ip"></td>
             </tr>
             </tbody>
         </table>
