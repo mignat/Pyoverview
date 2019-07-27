@@ -1,0 +1,12 @@
+{
+    "WIFI":{
+        "ssid" : "mens2019",
+        "password" : "fitnesspower"
+    },
+    "STATION": {
+        "name": "Pycom_2",
+        "location": "Sala1",
+        "description": "test device"
+    }
+  }
+  

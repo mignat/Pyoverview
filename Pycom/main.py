@@ -1,52 +1,38 @@
 from lib.helper import *
 import machine
+import ujson
 
-##################################### CONFIG ##################################
 
-stationName = "Lopy_3"
 
-#------------------------------------------------------------------------------
-
+config = ujson.loads(open("settings.json").read())
+stationName = config["STATION"]["name"]
 Rpi = serverConnector(stationName)
-tempSave = failSafeCreator("temp.recover")
-
-
-
-
-gpio32 = machine.Pin("P19", mode=Pin.OUT) # pin used to sense wifi status 
+x = Rpi.enrollStation()
 
 #------------------------------------------------------------------------------
 
 
-# Attempting to create table 
-Rpi.runScript("createStation.php")
+# Attempting to create table
+#Rpi.runScript("createStation.php")
 
 pin = machine.Pin("G0",machine.Pin.IN, pull=machine.Pin.PULL_UP)
 
-if tempSave.stateExists():
-    temp = tempSave.loadRecovery()
-    Rpi.sendValue("insertSQL.php",temp)
-    tempSave.delState()
-else:
-    temp = pin()
-
 try:
     while True:
-        if wlan.isconnected():
-            gpio32(True)
-        else:
-            gpio32(False)
-            tempSave.saveState(str(temp))
-            time.sleep(2)
+        if not wlan.isconnected():
+            time.sleep(1)
             machine.reset()
-
-        if ( pin() != temp ):
-            temp = pin()
-            Rpi.sendValue("insertSQL.php",temp)
+        if ( pin() == 1 ):
+            startTime = Rpi.getTime()
+            while pin() == 1:
+                
+                time.sleep(1)
+            if pin() == 0:
+                stopTime= Rpi.getTime()
+                print ("Sending Operation Cicle : [" + startTime +"] --> [" + stopTime +"]" )
             time.sleep(1)
         else:
             time.sleep(1)
 except OSError:
-    tempSave.saveState(str(temp))
     time.sleep(2)
     machine.reset()
