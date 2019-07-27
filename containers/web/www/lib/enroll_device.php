@@ -1,6 +1,14 @@
 <?php
 require("sqlQuery.php");
 
+
+if (isset($_GET['verify_uuid']){
+    $uuid = $_GET['verify_uuid'];
+    $query = sqlexec("SELECT * FROM `pyover_devices` WHERE `UID`=\'408fc14d-afd6-11e9-b06a-b827eb5d7d84\'");
+    echo $query[0]["UID"];
+
+}
+
 $json = file_get_contents('php://input');
 $data = json_decode($json,true);
 
