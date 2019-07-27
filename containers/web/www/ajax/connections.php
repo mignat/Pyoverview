@@ -20,8 +20,6 @@ if (isset($_GET['type'])) {
         case "wifiService":
             $status = getserviceStatus("hostapd");
             echo "$status";
-            $ip = getAdaptorIP("wlan0");
-            echo "$ip";
             break;
         case "vpn":
             $status = getserviceStatus("openvpn");
