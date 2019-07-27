@@ -15,7 +15,7 @@ if ($_SESSION['permissions'] != 1) {
 <script>
 
     window.setInterval(function(){
-        $('#ap_status').load('../../ajax/connections.php?type=wifiStatus');
+        $('#ap_status').load('../../ajax/connections.php?type=wifiService');
         $('#ap_ip').load('../../ajax/connections.php?type=wifiIP');
     }, 1000);
 
