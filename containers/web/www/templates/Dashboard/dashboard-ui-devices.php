@@ -31,7 +31,7 @@
     $no = 1;
     foreach ($device_list as $row) {
         $directory = getcwd();
-        $file = "{$directory}dashboard-ui-modal-creator.php";
+        $file = "/var/www/html/templates/Dashboard/dashboard-ui-modal-creator.php";
         $view = eval(file_get_contents($file));
         echo "<tr scope=\"row\">
 							<td>{$no}</td>
