@@ -11,5 +11,5 @@ $start = $data['start_time'];
 $stop  = $data['stop_time'];
 
 echo "Test2";
-$sql = "INSERT INTO `pyover_usetime` (`device_uid`, `start_time`, `end_time`) VALUES ('{$uuid}', '{$start}', '{$stop}')";
+$sql = "INSERT INTO `pyover_usetime` (`device_uid`, `start_time`, `end_time`) VALUES (\'af3e2304-b11c-11e9-af1b-b827eb5d7d84\', \'123131\', \'12312312\')";
 sqlexec($sql,null,true);
