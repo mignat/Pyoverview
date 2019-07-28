@@ -5,6 +5,9 @@
  * Date: 12/09/2018
  * Time: 17:22
  */
+
+$view = include('dashboard-ui-modal-creator.php');
+
 ?>
 <div class="container">
     <div class="container-fluid">
@@ -34,7 +37,7 @@
 							<td>{$row['last_contact']}</td>
 							<td class='device_options'>
 							<div class='btn-group'>
-							    <div><a <?php include('dashboard-ui-devices-view.php') ?> </div>
+							    <div>{$view}</div>
 							    <div><a class='btn btn-primary btn-sm' href=\"editStation.php?station={$row['name']}\">Edit</a></div>
 							    <div><button type=\"button\" class=\"btn btn-danger btn-sm\" data-container=\"body\" data-toggle=\"popover\" data-trigger=\"focus\" data-placement=\"right\" data-html=\"true\" title=\"<b>Are you sure ?</b>\" data-content=\"<div><a class='btn btn-danger btn-sm btn-block' href='/lib/be_devices.php?delete={$row['name']}'>Confirm</button></div>\">Remove</button></div>
 							    </div>
