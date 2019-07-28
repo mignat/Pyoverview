@@ -33,7 +33,9 @@ class serverConnector():
     
     def getTime(self):
         r = requests.get("http://%s/lib/be_connections.php?operation=timestamp"%self.host)
-        return (r.text.rstrip("\n"))
+        currentTime = r.text.rstrip("\n")
+        r.close()
+        return (currentTime)
 
     def enrollStation(self):
         
@@ -46,13 +48,15 @@ class serverConnector():
             req = requests.get("http://%s/lib/enroll_device.php?verify_uuid=%s"%(self.host,enroll_uuid))
             
             if (req.text.rstrip("\n") == self.stationName) :
-                print ("[I] [serverConnector] Enrolment status: Valid")
+                print ("[I] [serverConnector] Enrolment status: OK")
                 self.enrollment = True
             else:
-                print("[E] Invalid/Outdated Enrollment -> Removing enroment")
+                print("[E] [serverConnector] Enrolment status: INVALID")
+                print("[E] [serverConnector] Removing Enrolment File...")
                 os.remove('../enroll.state')
-                machine.reset()
+                self.enrollStation()
         else:
+            print ("[I] [serverConnector] Enrolment status: Not Enrolled!")
             print ("[I] [serverConnector] Enrolling Device...")
             j = ujson.loads(open("../settings.json").read())
             r = requests.post("http://%s/lib/enroll_device.php"%self.host,json=j)
@@ -60,7 +64,7 @@ class serverConnector():
                 enrollState = open("../enroll.state","w+")
                 enrollState.write(r.text.rstrip("\n"))
                 enrollState.close()
-                print ("UUID: [" + open("../enroll.state").read() + "]" )
+                print ("[I] [serverConnector] UUID: [" + open("../enroll.state").read() + "]" )
                 print ("[I] [serverConnector] Enrollment complete !")
                 self.enrollment = True
             else:

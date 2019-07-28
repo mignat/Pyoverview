@@ -7,7 +7,7 @@ import ujson
 config = ujson.loads(open("settings.json").read())
 stationName = config["STATION"]["name"]
 Rpi = serverConnector(stationName)
-x = Rpi.enrollStation()
+Rpi.enrollStation()
 
 #------------------------------------------------------------------------------
 
