@@ -15,7 +15,7 @@
                 <script>
 
                     window.setInterval(function(){
-                        $('#device_view').load('dashboard-ui-devices-view.php?device=<?php $row['name']; ?>);
+                        $('#device_view').load('./dashboard-ui-devices-view.php?device=<?php $row['name']; ?>);
 
                     }, 1000);
 
