@@ -9,4 +9,4 @@ $data = json_decode($json, true);
 $uuid = $data['uuid'];
 $start = $data['start_time'];
 $stop  = $data['stop_time'];
-sqlexec("INSERT INTO `pyover_usetime` (`device_uid`, `start_time`, `end_time`) VALUES ('$uuid', '$start', '$stop')");
+sqlexec("INSERT INTO `pyover_usetime` (`device_uid`, `start_time`, `end_time`) VALUES (\'{$uuid}\', \'{$start}\', \'{$stop}\')");
