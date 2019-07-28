@@ -6,7 +6,7 @@
  * Time: 17:22
  */
 
-$view = eval(file_get_contents('dashboard-ui-modal-creator.php'));
+
 
 ?>
 <div class="container">
@@ -30,6 +30,9 @@ $view = eval(file_get_contents('dashboard-ui-modal-creator.php'));
     <?php
     $no = 1;
     foreach ($device_list as $row) {
+        $directory = getcwd();
+        $file = "{$directory}dashboard-ui-modal-creator.php";
+        $view = eval(file_get_contents($file));
         echo "<tr scope=\"row\">
 							<td>{$no}</td>
 							<td>{$row['name']}</td>
