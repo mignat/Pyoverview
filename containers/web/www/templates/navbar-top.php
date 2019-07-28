@@ -54,7 +54,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item">Admin:<?php echo $_SESSION['permissions']; ?></a>
                         <a class="dropdown-item" href="#">Profile</a>
-                        <button class="dropdown-item" onclick="ajaxUpgrade()"></button>
+                        <button class="dropdown-item" onclick="ajaxUpgrade()">Upgrade</button>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="../lib/logout.php">Logout</a>
                     </div>
