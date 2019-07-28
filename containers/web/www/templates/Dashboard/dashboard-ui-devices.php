@@ -6,7 +6,7 @@
  * Time: 17:22
  */
 
-$view = include 'dashboard-ui-modal-creator.php' ;
+$view = eval(file_get_contents('dashboard-ui-modal-creator.php'));
 
 ?>
 <div class="container">
