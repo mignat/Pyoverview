@@ -72,7 +72,7 @@ class serverConnector():
                 print ("[E] [serverConnector] Enrollment Failed (No Response from RPI)")
 
     def sendData(self,start,stop):
-        j = '{"station":"%s","start":"%s","stop":"%s"}'%(self.enrollUUID,start,stop)
+        j = '{"uuid":"%s","start_time":"%s","stop_time":"%s"}'%(self.enrollUUID,start,stop)
         j = ujson.loads(j)
         requests.post("http://%s/lib/data_acquisition.php"%(self.host),json=j)
 
