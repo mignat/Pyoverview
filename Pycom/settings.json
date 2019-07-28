@@ -4,7 +4,7 @@
         "password" : "fitnesspower"
     },
     "STATION": {
-        "name": "Pycom_3",
+        "name": "Pycom_43",
         "location": "Sala1",
         "description": "test device"
     }

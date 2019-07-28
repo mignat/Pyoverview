@@ -29,7 +29,12 @@ try:
                 time.sleep(1)
             if pin() == 0:
                 stopTime= Rpi.getTime()
+                
+                print ("[I] [Main] Checking enrollment status....")
+                Rpi.enrollStation()
                 print ("Sending Operation Cicle : [" + startTime +"] --> [" + stopTime +"]" )
+                Rpi.sendData(startTime,stopTime)
+
             time.sleep(1)
         else:
             time.sleep(1)

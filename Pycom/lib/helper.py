@@ -9,6 +9,7 @@ class serverConnector():
     def __init__(self, station, host=wlan.ifconfig()[2], port = 80, debug=1):
         self.debug = debug
         self.enrollment = False
+        self.enrollUUID = ""
         self.stationName = station
         self.host = host
         self.port = port
@@ -43,9 +44,9 @@ class serverConnector():
         if (len([item for item in os.listdir("/flash") if "enroll.state"==item])>0):
 
             enrollState = open("../enroll.state","r")
-            enroll_uuid = enrollState.read()
+            self.enrollUUID = enrollState.read()
             enrollState.close()
-            req = requests.get("http://%s/lib/enroll_device.php?verify_uuid=%s"%(self.host,enroll_uuid))
+            req = requests.get("http://%s/lib/enroll_device.php?verify_uuid=%s"%(self.host,self.enrollUUID))
             
             if (req.text.rstrip("\n") == self.stationName) :
                 print ("[I] [serverConnector] Enrolment status: OK")
@@ -69,6 +70,14 @@ class serverConnector():
                 self.enrollment = True
             else:
                 print ("[E] [serverConnector] Enrollment Failed (No Response from RPI)")
+
+    def sendData(self,start,stop):
+        j = '{"station":"%s","start":"%s","stop":"%s"}'%(self.enrollUUID,start,stop)
+        j = ujson.loads(j)
+        requests.post("http://%s/lib/data_acquisition.php"%(self.host),json=j)
+
+    
+        
 
     def runScript(self,destination):
         postStr = 'POST /%s HTTP/1.1\r\n'%(destination)
