@@ -1,7 +1,7 @@
 <?php
 
 ?>
-
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <script src="../../scripts/settings-ui-users.js"></script>
 <button type="button" class="btn btn-primary btn-dark" data-toggle="modal" data-target="#useraddModal">View</button>
 <div class="modal fade" id="useraddModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
