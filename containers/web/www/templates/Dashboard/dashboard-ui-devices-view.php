@@ -7,7 +7,7 @@ if ($_SESSION['permissions'] != 1) {
 ?>
 
 <script src="../../scripts/settings-ui-users.js"></script>
-<button type="button" class="btn btn-primary btn-dark" data-toggle="modal" data-target="#useraddModal" >Add User</button>
+<button type="button" class="btn btn-primary btn-dark" data-toggle="modal" data-target="#useraddModal">View</button>
 <div class="modal fade" id="useraddModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
