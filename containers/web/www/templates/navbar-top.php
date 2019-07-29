@@ -6,7 +6,18 @@
  * Time: 15:26
  */
 ?>
+<script>
 
+    function ajaxUpgrade() {
+        $.ajax({
+            type: "GET",
+            url: "../../templates/settings/setting-ui-system.php",
+            data: "upgrade=1",
+        });
+
+
+
+</script>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="<?php echo "$actual_link?pane=dashboard&sub=main";?>">
         <img src="../images/logobot.svg" width="60" height="60" alt="">
@@ -43,7 +54,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item">Admin:<?php echo $_SESSION['permissions']; ?></a>
                         <a class="dropdown-item" href="#">Profile</a>
-
+                        <button class="dropdown-item" onclick="ajaxUpgrade()">Upgrad++++++</button>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="../lib/logout.php">Logout</a>
                     </div>

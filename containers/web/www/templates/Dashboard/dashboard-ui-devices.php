@@ -5,6 +5,9 @@
  * Date: 12/09/2018
  * Time: 17:22
  */
+
+
+
 ?>
 <div class="container">
     <div class="container-fluid">
@@ -27,6 +30,7 @@
     <?php
     $no = 1;
     foreach ($device_list as $row) {
+
         echo "<tr scope=\"row\">
 							<td>{$no}</td>
 							<td>{$row['name']}</td>
@@ -34,7 +38,7 @@
 							<td>{$row['last_contact']}</td>
 							<td class='device_options'>
 							<div class='btn-group'>
-							    <div><a <?php include('dashboard-ui-devices-view') ?> </div>
+							    <div></div>
 							    <div><a class='btn btn-primary btn-sm' href=\"editStation.php?station={$row['name']}\">Edit</a></div>
 							    <div><button type=\"button\" class=\"btn btn-danger btn-sm\" data-container=\"body\" data-toggle=\"popover\" data-trigger=\"focus\" data-placement=\"right\" data-html=\"true\" title=\"<b>Are you sure ?</b>\" data-content=\"<div><a class='btn btn-danger btn-sm btn-block' href='/lib/be_devices.php?delete={$row['name']}'>Confirm</button></div>\">Remove</button></div>
 							    </div>

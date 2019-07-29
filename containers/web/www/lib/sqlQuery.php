@@ -6,8 +6,8 @@ declare(strict_types=1);
  * Date: 13/08/2018
  * Time: 22:31
  */
-//error_reporting(E_ALL);
-//ini_set('display_errors', 'on');
+error_reporting(E_ALL);
+ini_set('display_errors', 'on');
 $status = 0;
 
 function sqlexec($q, $num = null, $no_output = false)
@@ -17,16 +17,20 @@ function sqlexec($q, $num = null, $no_output = false)
     $password = "mensmentis";
     $dbname = "pycom_dashboard";
 
-    mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+    //mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
+    if (file_exists("/.dockerenv"))
+    {
+        $conn = new mysqli("pyoverview_db_1", $username, "root", $dbname);
+    }else{
+        $conn = new mysqli($servername, $username, $password, $dbname);
+    }
 // Check connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
 
     $result = $conn->query($q);
-
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
