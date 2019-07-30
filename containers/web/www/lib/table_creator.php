@@ -13,9 +13,8 @@ class table_creator {
     function run_query ()
     {
         require_once "sqlQuery.php";
-
         $this->data = sqlexec($this->query);
-        echo $this->data;
+        return ($this->data);
     }
     function gen_table()
     {
