@@ -21,7 +21,7 @@ function sqlexec($q, $num = null, $no_output = false)
 // Create connection
     if (file_exists("/.dockerenv"))
     {
-        $conn = new mysqli("pyoverview_db_1", $username, "root", $dbname);
+        $conn = new mysqli("pyoverview_db_1", $username, $password, $dbname);
     }else{
         $conn = new mysqli($servername, $username, $password, $dbname);
     }
