@@ -27,7 +27,9 @@ class table_creator {
             echo "<table class=\"table table-hover\">";
             echo "<thead>";
             echo "<tr>";
-            foreach ($collums as $key => $col){
+            foreach($collums as $k => $v)
+                $keys[] = $k;
+            foreach ($keys as $col){
                 echo "<th scope=\"col\">$col</th>";
             }
             echo "</tr>";
