@@ -49,4 +49,5 @@ class table_creator {
 
 
 }   $x = new table_creator("SELECT * from pyover_users");
+    $x->run_query();
     $x->genTable();
