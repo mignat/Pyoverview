@@ -23,11 +23,11 @@ class table_creator {
             $collums = array_keys($this->data[0]);
 
 
-
+            echo "";
             echo "<table class=\"table table-hover\">";
             echo "<thead>";
             echo "<tr>";
-            foreach ($collums as $col){
+            foreach ($collums as $key => $col){
                 echo "<th scope=\"col\">$col</th>";
             }
             echo "</tr>";
