@@ -21,8 +21,7 @@ class table_creator {
 
         if ($this->data != "") {
             $collums = $this->data[0];
-            foreach($collums as $k => $v)
-                $keys[] = $k;
+            var_dump($collums);
 
             echo "";
             echo "<table class=\"table table-hover\">";
