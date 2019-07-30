@@ -10,11 +10,18 @@ class table_creator {
         $this->query = $query;
     }
 
-    function run_query () {
+    function run_query ()
+    {
         require_once "sqlQuery.php";
 
         $this->data = sqlexec($this->query);
         echo $this->data;
+    }
+    function gen_table()
+    {
+
+
+    }
 
     function genTable($query){
 

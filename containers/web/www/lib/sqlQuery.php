@@ -19,7 +19,12 @@ function sqlexec($q, $num = null, $no_output = false)
 
     //mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
+    if (file_exists("/.dockerenv"))
+    {
+        $conn = new mysqli("pyoverview_db_1", $username, "root", $dbname);
+    }else{
+        $conn = new mysqli($servername, $username, $password, $dbname);
+    }
 // Check connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
