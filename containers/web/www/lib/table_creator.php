@@ -21,13 +21,14 @@ class table_creator {
 
         if ($this->data != "") {
             $collums = array_keys($this->data[0]);
-
+            foreach($collums as $k => $v)
+                $keys[] = $k;
 
             echo "";
             echo "<table class=\"table table-hover\">";
             echo "<thead>";
             echo "<tr>";
-            foreach (array_values($collums) as $col){
+            foreach ($keys as $col){
                 echo "<th scope=\"col\">$col</th>";
             }
             echo "</tr>";
