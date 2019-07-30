@@ -38,12 +38,11 @@ class table_creator {
         echo "<td>Mark</td>" ;
         echo "</tr>";
         echo "</tbody>";
-        echo "</table>"
+        echo "</table>";
 
 
     }
-
-    }
+    
 
 }   $x = new table_creator("SELECT * from pyover_users");
     echo $x->run_query();
