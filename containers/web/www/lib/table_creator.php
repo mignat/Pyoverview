@@ -20,7 +20,7 @@ class table_creator {
     function genTable(){
 
         if ($this->data != "") {
-            $collums = array_keys($this->data[0]);
+            $collums = $this->data[0];
             foreach($collums as $k => $v)
                 $keys[] = $k;
 
