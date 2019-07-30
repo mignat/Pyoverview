@@ -45,5 +45,5 @@ class table_creator {
 
 }   $x = new table_creator("SELECT * from pyover_users");
     foreach (array_keys($x->run_query()[0]) as $key){
-        echo $key;
+        echo "<p>$key</p>";
     }
