@@ -44,4 +44,4 @@ class table_creator {
 
 
 }   $x = new table_creator("SELECT * from pyover_users");
-    echo $x->run_query()[0]['name'];
+    echo $x->run_query()[0]['username'];
