@@ -46,6 +46,4 @@ class table_creator {
 }   $x = new table_creator("SELECT * from pyover_users");
     $collums_names = array_keys($x->run_query()[1]);
 
-    foreach ($collums_names as $t){
-        echo $t;
-    }
+    echo $collums_names[1];
