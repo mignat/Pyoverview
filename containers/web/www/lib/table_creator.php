@@ -28,7 +28,7 @@ class table_creator {
             echo "<thead>";
             echo "<tr>";
             foreach($collums as $k => $v)
-                $keys[] = $k;
+                $keys[] = $v;
             foreach ($keys as $col){
                 echo "<th scope=\"col\">$col</th>";
             }
