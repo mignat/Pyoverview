@@ -5,6 +5,7 @@
  * Date: 08/10/2018
  * Time: 03:12
  */
+require("../lib/sqlQuery.php");
 function get_server_memory_usage()
 {
     $free = shell_exec('free');
@@ -24,6 +25,13 @@ function get_server_cpu_usage()
 
 }
 
+function device_num(){
+
+    $query = sqlexec("select count(*) from pyover_devices");
+    return $query[0][0];
+
+
+}
 switch ($_GET['type']) {
 
     case "cpu":
@@ -33,6 +41,9 @@ switch ($_GET['type']) {
     case "ram":
         $procent = get_server_memory_usage();
         echo "$procent %";
+        break;
+    case "device_num":
+        echo device_num();
         break;
 
     default:

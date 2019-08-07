@@ -6,7 +6,7 @@
  * Time: 15:01
  *
  */
-
+include ('./lib/table_creator.php');
 
 session_start();
 if (!isset($_SESSION['user_id'])) {

@@ -6,6 +6,7 @@ if ($_SESSION['permissions'] != 1) {
 }
 
 $user_list = sqlexec("SELECT * FROM `pyover_users`");
+$table = new table_creator("SELECT `username` AS `USERNAME`,`full_name` AS `NAME`,`privileges` AS `PRIVILEGES` FROM `pyover_users` WHERE 1\"",true)
 
 ?>
 <div class="container">

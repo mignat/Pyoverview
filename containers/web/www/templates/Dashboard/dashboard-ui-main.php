@@ -24,7 +24,7 @@
     <div class="jumbotron widget col-xs-6 col-sm-3">
         <h3>Connected Devices</h3>
         <hr class="my-4">
-        <h2>0</h2>
+        <h2 id="device-num">0</h2>
     </div>
 </div>
         <h3>Activity Log</h3>

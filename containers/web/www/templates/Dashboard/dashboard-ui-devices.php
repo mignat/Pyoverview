@@ -6,51 +6,39 @@
  * Time: 17:22
  */
 
-
-
 ?>
 <div class="container">
     <div class="container-fluid">
-<script>
-    $(function () {
-        $('[data-toggle="popover"]').popover()
-    })
-</script>
-<table class="table table-hover align-content-center" align="center">
-    <thead class="thead-dark">
-    <tr>
-        <th scope="col">NO</th>
-        <th scope="col">STATION</th>
-        <th scope="col">STATUS</th>
-        <th scope="col">LAST CONTACT</th>
-        <th scope="col">OPTIONS</th>
-    </tr>
-    </thead>
-    <tbody>
-    <?php
-    $no = 1;
-    foreach ($device_list as $row) {
+        <script src="../../scripts/dashboard-ui-devices.js"></script>
+        <?php
+        $table = new table_creator("SELECT `name` as `NAME`,`location` as `LOCATION`,`status` AS `STATUS` FROM `pyover_devices` WHERE 1", true);
+        $table->run_query();
+        $table->addOption("<button type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#viewModal\" data-device=\"%id%\">View</button>");
+        $table->addOption("<button type=\"button\" class=\"btn btn-warning\">Edit</button>");
+        $table->addOption("<button type=\"button\" class=\"btn btn-danger\" data-container=\"body\" data-toggle=\"popover\" data-trigger=\"focus\" data-placement=\"right\" data-html=\"true\" title=\"<b>Are you sure ?</b>\" data-content=\"<div><a class='btn btn-danger btn-sm btn-block' href='/lib/be_devices.php?delete=%id%'>Confirm</button></div>\">Remove</button>");
+        $table->genTable();
+        ?>
+    </div>
+</div>
 
-        echo "<tr scope=\"row\">
-							<td>{$no}</td>
-							<td>{$row['name']}</td>
-							<td>{$row['status']}</td>
-							<td>{$row['last_contact']}</td>
-							<td class='device_options'>
-							<div class='btn-group'>
-							    <div></div>
-							    <div><a class='btn btn-primary btn-sm' href=\"editStation.php?station={$row['name']}\">Edit</a></div>
-							    <div><button type=\"button\" class=\"btn btn-danger btn-sm\" data-container=\"body\" data-toggle=\"popover\" data-trigger=\"focus\" data-placement=\"right\" data-html=\"true\" title=\"<b>Are you sure ?</b>\" data-content=\"<div><a class='btn btn-danger btn-sm btn-block' href='/lib/be_devices.php?delete={$row['name']}'>Confirm</button></div>\">Remove</button></div>
-							    </div>
-                            </td>
-						</tr>";
-        $no++;
-    } ?>
-    </tbody>
-    <tfoot>
-    <tr>
-    </tr>
-    </tfoot>
-</table>
+
+<!-- The viewModal Dialog -->
+<div class="modal fade" id="viewModal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">View Station</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                ERROR : CANNOT RETRIEVE DATA
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
     </div>
 </div>

@@ -6,8 +6,8 @@ declare(strict_types=1);
  * Date: 13/08/2018
  * Time: 22:31
  */
-error_reporting(E_ALL);
-ini_set('display_errors', 'on');
+//error_reporting(E_ALL);
+//ini_set('display_errors', 'on');
 $status = 0;
 
 function sqlexec($q, $num = null, $no_output = false)
