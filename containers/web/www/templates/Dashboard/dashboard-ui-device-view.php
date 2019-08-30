@@ -5,8 +5,8 @@ $device = $_GET['device'];
 $device_data = sqlexec("select * from pyover_devices where name = \"$device\"");
 $device_uuid = $device_data[0]['UID'];
 $device_description = $device_data[0]['Description'];
-$table = new table_creator("SELECT DATE_FORMAT(FROM_UNIXTIME(start_time) ,'%Y-%m-%d %H:%i:%s') AS 'Start Time' ,DATE_FORMAT(FROM_UNIXTIME(end_time),'%Y-%m-%d %H:%i:%s') AS 'Stop Time' FROM `pyover_usetime` where `device_uid` = '$device_uuid' order by DATE_FORMAT(FROM_UNIXTIME(end_time),'%Y-%m-%d %H:%i:%s') DESC LIMIT 5 ");
-if ($table->run_query() == ""){
+$table_usetime = new table_creator("SELECT DATE_FORMAT(FROM_UNIXTIME(start_time) ,'%Y-%m-%d %H:%i:%s') AS 'Start Time' ,DATE_FORMAT(FROM_UNIXTIME(end_time),'%Y-%m-%d %H:%i:%s') AS 'Stop Time' FROM `pyover_usetime` where `device_uid` = '$device_uuid' order by DATE_FORMAT(FROM_UNIXTIME(end_time),'%Y-%m-%d %H:%i:%s') DESC LIMIT 10 ");
+if ($table_usetime->run_query() == ""){
     echo "<div class='jumbotron'>";
     echo "<h1> ERROR </h1>";
     echo "<hr class=\"my-4\">";
@@ -15,10 +15,100 @@ if ($table->run_query() == ""){
 }
 ?>
 
+<link href='../../lib/calendar/core/main.css' rel='stylesheet' />
+<link href='../../lib/calendar/daygrid/main.css' rel='stylesheet' />
+<link href='../../lib/calendar/timegrid/main.css' rel='stylesheet' />
+<link href='../../lib/calendar/list/main.css' rel='stylesheet' />
+<script src='../../lib/calendar/core/main.js'></script>
+<script src='../../lib/calendar/interaction/main.js'></script>
+<script src='../../lib/calendar/daygrid/main.js'></script>
+<script src='../../lib/calendar/timegrid/main.js'></script>
+<script src='../../lib/calendar/list/main.js'></script>
+<script>
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            plugins: [ 'interaction', 'dayGrid', 'timeGrid', 'list' ],
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+            },
+            defaultDate: '2019-08-12',
+            editable: true,
+            navLinks: true, // can click day/week names to navigate views
+            eventLimit: true, // allow "more" link when too many events
+            events: {
+                url: 'lib/get-events.php',
+                failure: function() {
+                    document.getElementById('script-warning').style.display = 'block'
+                }
+            },
+            loading: function(bool) {
+                document.getElementById('loading').style.display =
+                    bool ? 'block' : 'none';
+            }
+        });
+
+        calendar.render();
+    });
+
+</script>
+<style>
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+        font-size: 14px;
+    }
+
+    #script-warning {
+        display: none;
+        background: #eee;
+        border-bottom: 1px solid #ddd;
+        padding: 0 10px;
+        line-height: 40px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 12px;
+        color: red;
+    }
+
+    #loading {
+        display: none;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+
+    #calendar {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 0 10px;
+    }
+
+</style>
 <div class="container-fluid">
-    <div class="jumbotron">
-        <h5>UID: <?php echo $device_uuid; ?></h5>
-        <h5>Description: <?php echo $device_description; ?></h5>
+    <div>
+        <table class="table table-sm" style="padding-bottom: 50px">
+            <thead>
+            </thead>
+            <tbody>
+            <tr>
+
+                <td>UUID</td>
+                <td><?php echo $device_uuid; ?></td>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td><?php echo $device_description; ?></td>
+            </tr>
+            </tbody>
+        </table>
+
     </div>
     <script src="../../scripts/Chart.bundle.js"></script>
     <div class="container">
@@ -33,23 +123,28 @@ if ($table->run_query() == ""){
             </div>
         </div>
         <canvas id="myChart" width="400" height="100"></canvas>
-        <h4 style="padding-top: 40px">Latest Data</h4>
-        <?php
-        echo "<hr class=\"my-4\">";
-        $table->genTable();
-        ?>
-
+       <!-- --><?php
+/*        echo "<hr class=\"my-4\">";
+        $table_usetime->genTable();
+        */?>
     </div>
+        <div id='script-warning'>
+            <code>php/get-events.php</code> must be running.
+        </div>
+
+        <div id='loading'>loading...</div>
+     <div id='calendar'></div>
+
     <script>
 
         var ctx = $('#myChart');
         var myChart = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday','Sunday'],
                 datasets: [{
-                    label: '# of Votes',
-                    data: [12, 19, 3, 5, 2, 3],
+                    label: '# of activations per day',
+                    data: [1,2,3,5,6,7,8],
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
                         'rgba(54, 162, 235, 0.2)',

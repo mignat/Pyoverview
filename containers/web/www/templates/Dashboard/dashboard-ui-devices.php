@@ -24,7 +24,7 @@
 
 <!-- The viewModal Dialog -->
 <div class="modal fade" id="viewModal">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">View Station</h4>

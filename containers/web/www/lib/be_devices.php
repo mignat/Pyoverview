@@ -16,3 +16,18 @@ if (isset($_GET['delete'])) {
 }
 
 header("Location: http://$_SERVER[HTTP_HOST]/PyDashboard.php?pane=dashboard&sub=devices"); /* Redirect browser */
+
+
+function getWeekData($uid) {
+    $x = sqlexec('SELECT start_time,stop_time');
+
+    if (date('w', time()) == 1)
+        $beginning_of_week = strtotime('Today',time());
+    else
+        $beginning_of_week = strtotime('last Monday',time());
+
+    if (date('w', time()) == 7)
+        $end_of_week = strtotime('Today', time()) + 86400;
+    else
+        $end_of_week = strtotime('next Sunday', time()) + 86400;
+}
