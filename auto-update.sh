@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+echo "Installing Prerequisits
+sudo apt install nginx git -y
 
 if [ -f ./Pyoverview ]; then
     echo "Pyoverview exists! Updating...."
