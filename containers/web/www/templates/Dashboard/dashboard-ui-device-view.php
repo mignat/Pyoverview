@@ -46,7 +46,6 @@ if ($table_usetime->run_query() == "") {
     </div>
     <script src="../../scripts/Chart.bundle.js"></script>
     <div class="container">
-        <canvas id="myChart" width="400" height="100"></canvas>
         <div id='loading'>loading...</div>
         <div id='calendar'></div>
     </div>
@@ -57,8 +56,6 @@ if ($table_usetime->run_query() == "") {
     $(document).ready(function () {
         var calendarEl = document.getElementById('calendar');
         var d = new Date().getDate();
-        alert (d);
-
         var calendar = new FullCalendar.Calendar(calendarEl, {
             plugins: ['interaction', 'dayGrid', 'timeGrid', 'list'],
             header: {
@@ -67,6 +64,7 @@ if ($table_usetime->run_query() == "") {
                 right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
             },
             defaultDate: '2019-08-12',
+            defaultView: 'listWeek',
             editable: true,
             navLinks: true, // can click day/week names to navigate views
             eventLimit: true, // allow "more" link when too many events
