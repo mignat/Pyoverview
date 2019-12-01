@@ -4,7 +4,7 @@ if [ -d ./Pyoverview ]; then
     echo "Pyoverview exists! Updating...."
     cd Pyoverview && git pull
 
-    if [ $1 == "testing" ]; then
+    if [ $1 -eq "testing" ]; then
         git checkout testing
     else
         git checkout stable
