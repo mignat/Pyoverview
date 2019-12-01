@@ -3,6 +3,12 @@
 if [ -d ./Pyoverview ]; then
     echo "Pyoverview exists! Updating...."
     cd Pyoverview && git pull
+
+    if [ $1 == "testing" ]; then
+        git checkout testing
+    else
+        git checkout stable
+    fi
 else
     echo "Folder not found !  Creating it !"
     git clone https://github.com/mignat/Pyoverview.git
