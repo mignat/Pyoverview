@@ -33,7 +33,7 @@ function device_num(){
 }
 
 function systemUpdate($branch){
-    $execution = shell_exec("git pull && git checkout $branch");
+    $execution = shell_exec("sudo /var/www/auto-update.sh $branch");
     return $execution;
 }
 
