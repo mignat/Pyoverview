@@ -1,6 +1,6 @@
 <?php
 ?>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../../components/systemUpdate/style.css">
 <script src="scripts/systemupdate.js"></script>
 <button type="button" class="btn btn-primary btn-dark" data-toggle="modal" data-target="#systemUpdateModal" >System Update</button>
 
