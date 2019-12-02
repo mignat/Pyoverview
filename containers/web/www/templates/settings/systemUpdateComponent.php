@@ -46,8 +46,8 @@
             </div>
             <script>
                 window.setInterval(function(){
-                    $('#app_version').load('ajax/systeminfo.php?type=cpu');
-                    $('#branch_info').load('ajax/systeminfo.php?type=ram');
+                    $('#app_version').load('ajax/systeminfo.php?type=getVersion');
+                    $('#branch_info').load('ajax/systeminfo.php?type=getBranch');
                 }, 1000);
             </script>
         </div>
