@@ -37,7 +37,6 @@ function systemUpdate($branch){
 //    $output = explode(PHP_EOL, $execution);
 //    foreach ($output as $line){
 //        echo "<p>$line</p>";
-    }
 }
 
 switch ($_GET['type']) {
