@@ -52,7 +52,7 @@ switch ($_GET['type']) {
         break;
 
     case "getBranch":
-        echo shell_exec("git rev-parse HEAD");
+        echo shell_exec("git rev-parse --abbrev-ref HEAD");
         break;
 
 
