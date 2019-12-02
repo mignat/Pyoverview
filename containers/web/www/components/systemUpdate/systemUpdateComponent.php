@@ -14,6 +14,24 @@
             </div>
             <div class="modal-body">
                 <div class="form-group">
+                    <div>
+                        <table class="table table-sm" style="padding-bottom: 50px">
+                            <thead>
+                            </thead>
+                            <tbody>
+                            <tr>
+
+                                <td>App Version:</td>
+                                <td><?php echo $shell_exec("git rev-parse HEAD"); ?></td>
+                            </tr>
+                            <tr>
+                                <td>Current Branch:</td>
+                                <td><?php echo $shell_exec("git rev-parse --abbrev-ref HEAD"); ?></td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
                 <label for="branchSelect">Select Branch</label>
                 <select class="form-control" id="branchSelect">
                     <option>Stable</option>
