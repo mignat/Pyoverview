@@ -43,3 +43,18 @@ form {
         max-width:1200px;
     }
 }
+iframe {
+    min-height: 800px;
+    width: 100%;
+}
+
+#update_output {
+    font-family: monospace;
+    background: ;
+    background-color: rgba(195, 230, 203, 1);
+    padding-left: 15px;
+    padding-bottom: 15px;
+    margin-top: 15px;
+    border-radius: 15px;
+    padding-top: 15px;
+}

@@ -6,6 +6,8 @@
  * Time: 03:12
  */
 require("../lib/sqlQuery.php");
+error_reporting(E_ALL);
+ini_set('display_errors', 'on');
 function get_server_memory_usage()
 {
     $free = shell_exec('free');
@@ -30,7 +32,13 @@ function device_num(){
     $query = sqlexec("select count(*) from pyover_devices");
     return $query[0][0];
 
+}
 
+function systemUpdate($branch)
+{
+    $desired_branch = $branch;
+    $execution = shell_exec("cd /var/www && sudo /var/www/auto-update.sh $branch 2>&1");
+    return $execution;
 }
 switch ($_GET['type']) {
 
@@ -38,12 +46,38 @@ switch ($_GET['type']) {
         $procent = get_server_cpu_usage();
         echo "$procent %";
         break;
+
+    case "getVersion":
+        echo shell_exec("git rev-parse HEAD");
+        break;
+
+    case "getBranch":
+        echo shell_exec("git rev-parse --abbrev-ref HEAD");
+        break;
+
+
     case "ram":
         $procent = get_server_memory_usage();
         echo "$procent %";
         break;
+
     case "device_num":
         echo device_num();
+        break;
+
+    case "systemUpdate":
+        if (!isset($_GET["branch"])){
+            echo "Please specify \"branch\" parameter";
+        } else {
+           $exec =  systemUpdate($_GET["branch"]);
+           if (isset($exec)) {
+               $output = explode(PHP_EOL, $exec);
+               foreach ($output as $line) {
+                   echo "<p>$line</p>";
+               }
+           }
+
+        }
         break;
 
     default:

@@ -6,18 +6,6 @@
  * Time: 15:26
  */
 ?>
-<script>
-
-    function ajaxUpgrade() {
-        $.ajax({
-            type: "GET",
-            url: "../../templates/settings/setting-ui-system.php",
-            data: "upgrade=1",
-        });
-
-
-
-</script>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="<?php echo "$actual_link?pane=dashboard&sub=main";?>">
         <img src="../images/logobot.svg" width="60" height="60" alt="">
