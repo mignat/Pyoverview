@@ -37,7 +37,7 @@
                     <option>Testing</option>
                 </select>
                     <div style="margin-top: 15px">
-                    <button class="btn btn-danger btn-block" id="updateButton">Start Update !</button>
+                    <button onclick="startUpdate()" class="btn btn-danger btn-block" id="updateButton">Start Update !</button>
                     </div>
                     <div class="panel" id ="update_output"></div>
                 </div>
