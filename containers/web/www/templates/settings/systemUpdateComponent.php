@@ -55,6 +55,7 @@
 
 
                 function startUpdate() {
+                    $("#update_output").
                     let branch = $("#branchSelect option:selected").text().toLowerCase();
                     $('#update_output').load('ajax/systeminfo.php?type=systemUpdate&branch='.concat(branch));
                 }
