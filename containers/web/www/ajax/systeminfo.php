@@ -35,7 +35,7 @@ function device_num(){
 }
 
 function systemUpdate($branch){
-    $execution = shell_exec("cd /var/www && sudo /var/www/auto-update.sh $branch");
+    $execution = shell_exec("cd /var/www && /var/www/auto-update.sh $branch");
 //    $output = explode(PHP_EOL, $execution);
 //    foreach ($output as $line){
 //        echo "<p>$line</p>";
