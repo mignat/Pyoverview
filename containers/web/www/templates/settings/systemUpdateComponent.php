@@ -20,11 +20,11 @@
                             <tr>
 
                                 <td>App Version:</td>
-                                <td><?php echo $shell_exec("git rev-parse HEAD"); ?></td>
+                                <td><?php echo shell_exec("git rev-parse HEAD"); ?></td>
                             </tr>
                             <tr>
                                 <td>Current Branch:</td>
-                                <td><?php echo $shell_exec("git rev-parse --abbrev-ref HEAD"); ?></td>
+                                <td><?php echo shell_exec("git rev-parse --abbrev-ref HEAD"); ?></td>
                             </tr>
                             </tbody>
                         </table>
