@@ -30,8 +30,13 @@ function device_num(){
     $query = sqlexec("select count(*) from pyover_devices");
     return $query[0][0];
 
-
 }
+
+function systemUpdate($branch){
+    $execution = shell_exec("git pull && git checkout $branch");
+    return $execution;
+}
+
 switch ($_GET['type']) {
 
     case "cpu":
@@ -44,6 +49,13 @@ switch ($_GET['type']) {
         break;
     case "device_num":
         echo device_num();
+        break;
+    case "systemUpdate":
+        if (!isset($_GET["branch"]){
+            echo "Please specify \"branch\" parameter";
+        } else {
+            echo systemUpdate($_GET["branch"];
+        }
         break;
 
     default:
