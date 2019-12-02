@@ -34,13 +34,12 @@ function device_num(){
 
 }
 
-function systemUpdate($branch){
-    $execution = shell_exec("cd /var/www && /var/www/auto-update.sh $branch");
-//    $output = explode(PHP_EOL, $execution);
-//    foreach ($output as $line){
-//        echo "<p>$line</p>";
+function systemUpdate($branch)
+{
+    $desired_branch = $branch;
+    $execution = shell_exec("/var/www/auto-update.sh $branch");
+    return $execution;
 }
-
 switch ($_GET['type']) {
 
     case "cpu":
@@ -58,7 +57,14 @@ switch ($_GET['type']) {
         if (!isset($_GET["branch"])){
             echo "Please specify \"branch\" parameter";
         } else {
-            systemUpdate($_GET["branch"]);
+           $exec =  systemUpdate($_GET["branch"]);
+           if (isset($exec)) {
+               $output = explode(PHP_EOL, $exec);
+               foreach ($output as $line) {
+                   echo "<p>$line</p>";
+               }
+           }
+
         }
         break;
 
