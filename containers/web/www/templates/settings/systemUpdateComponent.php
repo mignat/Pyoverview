@@ -19,11 +19,11 @@
                             <tbody>
                             <tr>
                                 <td>App Version:</td>
-                                <td><?php echo shell_exec("git rev-parse HEAD"); ?></td>
+                                <td id="app_version">Unknown</td>
                             </tr>
                             <tr>
                                 <td>Active Branch:</td>
-                                <td><?php echo shell_exec("git rev-parse --abbrev-ref HEAD"); ?></td>
+                                <td id="branch_info">Unknown</td>
                             </tr>
                             </tbody>
                         </table>
@@ -44,7 +44,12 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
-
+            <script>
+                window.setInterval(function(){
+                    $('#app_version').load('ajax/systeminfo.php?type=cpu');
+                    $('#branch_info').load('ajax/systeminfo.php?type=ram');
+                }, 1000);
+            </script>
         </div>
     </div>
 </div>

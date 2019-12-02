@@ -46,13 +46,25 @@ switch ($_GET['type']) {
         $procent = get_server_cpu_usage();
         echo "$procent %";
         break;
+
+    case "getVersion":
+        echo shell_exec("git rev-parse HEAD");
+        break;
+
+    case "getBranch":
+        echo shell_exec("git rev-parse HEAD");
+        break;
+
+
     case "ram":
         $procent = get_server_memory_usage();
         echo "$procent %";
         break;
+
     case "device_num":
         echo device_num();
         break;
+
     case "systemUpdate":
         if (!isset($_GET["branch"])){
             echo "Please specify \"branch\" parameter";
