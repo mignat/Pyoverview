@@ -37,7 +37,7 @@ function device_num(){
 function systemUpdate($branch)
 {
     $desired_branch = $branch;
-    $execution = shell_exec("/var/www/auto-update.sh $branch");
+    $execution = shell_exec("cd /var/www && /var/www/auto-update.sh $branch");
     return $execution;
 }
 switch ($_GET['type']) {
