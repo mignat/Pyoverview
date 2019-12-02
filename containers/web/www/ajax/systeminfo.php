@@ -6,6 +6,8 @@
  * Time: 03:12
  */
 require("../lib/sqlQuery.php");
+error_reporting(E_ALL);
+ini_set('display_errors', 'on');
 function get_server_memory_usage()
 {
     $free = shell_exec('free');
