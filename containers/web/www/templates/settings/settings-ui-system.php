@@ -7,6 +7,8 @@ if (isset($_GET['upgrade'])){
 ?>
 
 <div class="container">
-<?php include ("systemUpdateComponent.php"); ?>
 
+    <div class="jumbotron-fluid"
+<?php include ("systemUpdateComponent.php"); ?>
+</div>
 </div>

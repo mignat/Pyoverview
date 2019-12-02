@@ -34,7 +34,7 @@
                     <option>Stable</option>
                     <option>Testing</option>
                 </select>
-                    <div>
+                    <div style="margin-top: 15px">
                     <button class="btn btn-danger btn-block" id="updateButton">Start Update !</button>
                     </div>
                 </div>
