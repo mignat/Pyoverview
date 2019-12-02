@@ -1,7 +1,5 @@
 <?php
 ?>
-<link rel="stylesheet" href="styles/style.css">
-<script src="scripts/systemupdate.js"></script>
 <button type="button" class="btn btn-primary btn-dark" data-toggle="modal" data-target="#systemUpdateModal" >System Update</button>
 
 <!-- The SystemUpdate Dialog -->
