@@ -33,8 +33,9 @@ function device_num(){
 }
 
 function systemUpdate($branch){
-    $execution = shell_exec("git pull && git checkout $branch");
+    $execution = shell_exec("sudo git pull && sudo git checkout $branch");
     return $execution;
+
 }
 
 switch ($_GET['type']) {
