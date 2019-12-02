@@ -39,6 +39,7 @@
                     <div style="margin-top: 15px">
                     <button class="btn btn-danger btn-block" id="updateButton">Start Update !</button>
                     </div>
+                    <div class="panel" id ="update_output"></div>
                 </div>
             </div>
 
@@ -51,6 +52,13 @@
                     $('#app_version').load('ajax/systeminfo.php?type=getVersion');
                     $('#branch_info').load('ajax/systeminfo.php?type=getBranch');
                 }, 1000);
+
+
+                function startUpdate() {
+                    let branch = $("#branchSelect option:selected").text().toLowerCase();
+                    $('#update_output').load('ajax/systeminfo.php?type=systemUpdate&branch='.concat(branch));
+                }
+
             </script>
         </div>
     </div>
