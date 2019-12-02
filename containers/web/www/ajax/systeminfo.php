@@ -51,10 +51,10 @@ switch ($_GET['type']) {
         echo device_num();
         break;
     case "systemUpdate":
-        if (!isset($_GET["branch"]){
+        if (!isset($_GET["branch"])){
             echo "Please specify \"branch\" parameter";
         } else {
-            echo systemUpdate($_GET["branch"];
+            echo systemUpdate($_GET["branch"]);
         }
         break;
 
