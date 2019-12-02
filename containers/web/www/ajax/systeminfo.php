@@ -33,8 +33,11 @@ function device_num(){
 }
 
 function systemUpdate($branch){
-    $execution = shell_exec("pwd && sudo /var/www/auto-update.sh $branch");
-    return $execution;
+    $execution = shell_exec("cd /var/www && pwd && sudo /var/www/auto-update.sh $branch");
+    $output = explode(PHP_EOL, $execution);
+    foreach ($output as $line){
+        echo "<p>$line</p>";
+    }
 }
 
 switch ($_GET['type']) {
@@ -54,7 +57,7 @@ switch ($_GET['type']) {
         if (!isset($_GET["branch"])){
             echo "Please specify \"branch\" parameter";
         } else {
-            echo systemUpdate($_GET["branch"]);
+            systemUpdate($_GET["branch"]);
         }
         break;
 
