@@ -8,6 +8,6 @@ if (isset($_GET['upgrade'])){
 
 <div class="container">
 <p>test</p>
-<?php include ($_SERVER['DOCUMENT_ROOT']."/components/systemUpdate/systemUpdateComponent.php"); ?>
+<?php include ("systemUpdateComponent.php"); ?>
 
 </div>
