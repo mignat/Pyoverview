@@ -7,5 +7,6 @@ if (isset($_GET['upgrade'])){
 ?>
 
 <div class="container">
+<?php include ("systemUpdateComponent.php"); ?>
 
 </div>
