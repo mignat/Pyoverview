@@ -49,6 +49,7 @@ iframe {
 }
 
 #update_output {
+    display: none;
     font-family: monospace;
     background: ;
     background-color: rgba(195, 230, 203, 1);

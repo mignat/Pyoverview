@@ -57,6 +57,7 @@
                 function startUpdate() {
                     $("#update_output").remove("p");
                     let branch = $("#branchSelect option:selected").text().toLowerCase();
+                    $('#update_output').show();
                     $('#update_output').load('ajax/systeminfo.php?type=systemUpdate&branch='.concat(branch));
                 }
 
