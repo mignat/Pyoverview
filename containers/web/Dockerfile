@@ -5,6 +5,8 @@ MAINTAINER Marius Ignat <marius.ignat13@gmail.com>
 RUN useradd -ms /bin/bash  ubuntu
 RUN echo "ubuntu:Docker!" | chpasswd
 
+#Add file to detect if in docker container
+RUN touch /isdocker
 
 # Install apache, PHP, and supplimentary programs. openssh-server, curl, and lynx-cur are for debugging the container.
 RUN apt-get update && apt-get -y upgrade && DEBIAN_FRONTEND=noninteractive apt-get -y install \
@@ -41,3 +43,5 @@ ADD apache-config.conf /etc/apache2/sites-enabled/000-default.conf
 
 # By default start up apache in the foreground, override with /bin/bash for interative.
 CMD /usr/sbin/apache2ctl -D FOREGROUND
+
+HEALTHCHECK --interval=5s --timeout=3s CMD curl --fail http://localhost:80/PyDashboard.php || exit 1

@@ -37,12 +37,11 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <img src="../images/user.png" width="32" height="32" alt="">
-                        <?php echo $_SESSION['full_name'];?>
+                        <div class="session-user"><?php echo $_SESSION['full_name'];?></div>
+                        <div <?php if ($_SESSION['permissions'] == 1) {echo "class=\"badge badge-pill badge-danger\">Admin";}else{ echo ">";} ?></div>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item">Admin:<?php echo $_SESSION['permissions']; ?></a>
                         <a class="dropdown-item" href="#">Profile</a>
-                        <button class="dropdown-item" onclick="ajaxUpgrade()">Upgrad++++++</button>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="../lib/logout.php">Logout</a>
                     </div>

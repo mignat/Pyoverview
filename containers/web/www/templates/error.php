@@ -21,6 +21,9 @@ switch($error_type) {
     case "Access_denied":
         $message = "You lack the privileges to access this page !";
         break;
+    case "Inside_Docker":
+        $message = "This feature is not available inside the Docker testing environment";
+        break;
     default:
         $message = "The page you are looking for ";
 }
@@ -34,7 +37,7 @@ switch($error_type) {
 <div class="container">
 <div class="jumbotron">
     <h1>
-        <?php echo $error_type; ?>
+        <img style="max-width: 32px;max-height: 32px;" class="small-img" src="../images/error.png"><?php echo $error_type; ?>
     </h1>
     <hr class="my-4">
     <p>

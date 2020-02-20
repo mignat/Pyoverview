@@ -17,6 +17,8 @@ services:
     build: ./containers/web
     ports:
     - "9090:80"
+    cap_add:
+      - ALL
 
 #  grifana:
 #    image: grafana/grafana

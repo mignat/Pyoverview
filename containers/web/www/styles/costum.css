@@ -59,3 +59,14 @@ iframe {
     border-radius: 15px;
     padding-top: 15px;
 }
+
+.small-img {
+    max-width: 32px;
+    max-height: 32px;
+}
+.dropdown {
+    min-width: 100px;
+}
+.session-user {
+    display: inline;
+}
