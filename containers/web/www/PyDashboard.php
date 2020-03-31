@@ -13,7 +13,8 @@ if (!isset($_SESSION['user_id'])) {
     header("Location: http://$_SERVER[HTTP_HOST]/lib/login.php"); /* Redirect browser */
     exit();
 }
-
+error_reporting(E_ALL);
+ini_set('display_errors', 'on');
 if (!isset($_GET['pane']) && !isset($_GET['sub'])){
     $_GET['pane'] = "dashboard";
     $_GET['sub'] = "main";

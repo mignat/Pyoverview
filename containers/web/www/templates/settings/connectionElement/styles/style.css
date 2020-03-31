@@ -1,0 +1,14 @@
+.menu_heading {
+    display: block;
+    padding: 10px 20px;
+    margin: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #f3f5f8;
+    border: 1px solid #dacece;
+}
+.details {
+    font-size: 12px;
+    font-family: "Andale Mono";
+}
+

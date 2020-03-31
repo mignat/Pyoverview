@@ -13,16 +13,10 @@ if ($_SESSION['permissions'] != 1) {
 if (file_exists("/isdocker")) {
     echo "Docker";
     include("../error.php?errortype=Access_denied");
-//    header("Location: http://$_SERVER[HTTP_HOST]/templates/error.php?errortype=Inside_Docker"); /* Redirect browser */
+    header("Location: http://$_SERVER[HTTP_HOST]/templates/error.php?errortype=Inside_Docker"); /* Redirect browser */
     exit();
 } else {
     echo "<iframe frameborder=\"0\" id=\"monitoring_frame\"";
     echo "src=\"http://$_SERVER[HTTP_HOST]/phpmyadmin/index.php\"></iframe>";
 }
-<div class="container-fluid">
 
-
-    <iframe frameborder="0" id="myadmin_frame" src="http://<?= $_SERVER[HTTP_HOST] ?>/phpmyadmin/index.php"></iframe>
-
-
-</div>

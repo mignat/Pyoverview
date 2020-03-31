@@ -6,35 +6,6 @@ if ($_SESSION['permissions'] != 1) {
 }
 ?>
 
-<script>
-    function restartAjax() {
-        $.ajax({
-            type: "GET",
-            url: "../../lib/be_connections.php",
-            data: "operation=restart&service=hostapd",
-        });
-    }
-    function startAjax() {
-        $.ajax({
-            type: "GET",
-            url: "../../lib/be_connections.php",
-            data: "operation=start&service=hostapd",
-        });
-    }
-    function stopAjax() {
-        $.ajax({
-            type: "GET",
-            url: "../../lib/be_connections.php",
-            data: "operation=stop&service=hostapd",
-        });
-    }
-</script>
-
-
-<button type="button" onclick="startAjax()" class="btn btn-primary btn-success">Start</button>
-<button type="button" onclick="stopAjax()" class="btn btn-primary btn-danger">Stop</button>
-<button type="button" onclick="restartAjax()" class="btn btn-primary btn-warning">Restart</button>
-<button type="button" class="btn btn-primary btn-dark" data-toggle="modal" data-target="#ModalWifi" >Settings</button>
 <div class="modal fade" id="ModalWifi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">

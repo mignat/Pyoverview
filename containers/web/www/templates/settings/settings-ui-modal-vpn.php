@@ -5,7 +5,6 @@ if ($_SESSION['permissions'] != 1) {
     exit();
 }
 ?>
-<button type="button" class="btn btn-primary btn-dark" data-toggle="modal" data-target="#ModalVpn" >Settings</button>
 <div class="modal fade" id="ModalVpn" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
