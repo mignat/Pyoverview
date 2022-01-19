@@ -63,13 +63,12 @@ if ($table_usetime->run_query() == "") {
                 center: 'title',
                 right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
             },
-            defaultDate: '2019-08-12',
             defaultView: 'listWeek',
             editable: true,
             navLinks: true, // can click day/week names to navigate views
             eventLimit: true, // allow "more" link when too many events
             events: {
-                url: 'lib/get-events.php',
+                url: 'lib/get-events.php?uid=<?php echo $device_uuid; ?>',
                 failure: function () {
                     document.getElementById('script-warning').style.display = 'block'
                 }
