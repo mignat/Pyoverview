@@ -12,7 +12,7 @@ $status = 0;
 
 function sqlexec($q, $num = null, $no_output = false)
 {
-    $servername = "localhost";
+    $servername = "localhost:8008";
     $username = "root";
     $password = "mensmentis";
     $dbname = "pycom_dashboard";
