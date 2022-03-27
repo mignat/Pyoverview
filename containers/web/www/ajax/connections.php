@@ -13,7 +13,7 @@ function getAdaptorIP($interafce){
     return shell_exec("ip addr show $interafce | awk '$1 == \"inet\" {gsub(/\/.*$/, \"\", $2); print $2}'");
 }
 function getTunnelHost($service){
-    return shell_exec("sudo service ssh_tunnel status |grep -io \"ubuntu@.*\"");
+    return shell_exec("sudo systemctl  status $service |grep -io \"ubuntu@.*\"");
 }
 
 

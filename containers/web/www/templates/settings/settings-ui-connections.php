@@ -46,9 +46,20 @@ if ($_SESSION['permissions'] != 1) {
     </div>
     <div class="container jumbotron">
         <h3> DB Tunnel Settings </h3>
-        <span>Status:</span><span id="tunnel_status"> </span><span>        </span>
-        <span>IP:</span><span id="tunnel_host"></span>
         <hr class='my-4'>
+        <table class="table table-borderless">
+            <tbody>
+            <tr scope="row">
+                <td style="max-width: 0px">Status:</td>
+                <td id="tunnel_status"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Target Host:</td>
+                <td id="tunnel_host"></td>
+            </tr>
+            </tbody>
+        </table>
         <?php
         include("settings-ui-connections-vpn.php")
         ?>
