@@ -10,24 +10,27 @@ function getserviceStatus($service)
     }
 }
 function getAdaptorIP($interafce){
-    $x = shell_exec("ip addr show $interafce | awk '$1 == \"inet\" {gsub(/\/.*$/, \"\", $2); print $2}'");
-    return $x;
+    return shell_exec("ip addr show $interafce | awk '$1 == \"inet\" {gsub(/\/.*$/, \"\", $2); print $2}'");
 }
+function getTunnelHost($service){
+    return shell_exec("sudo service ssh_tunnel status |grep -io "ubuntu@.*"")
+}
+
 
 if (isset($_GET['type'])) {
     switch ($_GET['type']) {
 
         case "wifiService":
-            $status = getserviceStatus("hostapd");
-            echo "$status";
+            echo getserviceStatus("hostapd");;
             break;
-        case "vpn":
-            $status = getserviceStatus("openvpn");
-            echo "$status";
+        case "tunnelService":
+            echo getserviceStatus("ssh_tunnel");
+            break;
+        case "tunnelHost":
+            echo getTunnelHost("ssh_tunnel");
             break;
         case "wifiIP":
-            $ip = getAdaptorIP("wlan0");
-            echo "$ip";
+            echo getAdaptorIP("wlan1");
             break;
 
         default:

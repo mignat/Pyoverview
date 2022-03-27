@@ -17,7 +17,9 @@ if ($_SESSION['permissions'] != 1) {
     window.setInterval(function(){
         $('#ap_status').load('../../ajax/connections.php?type=wifiService');
         $('#ap_ip').load('../../ajax/connections.php?type=wifiIP');
-    }, 1000);
+        $('#tunnel_status').load('../../ajax/connections.php?type=tunnelService');
+        $('#tunnel_host').load('../../ajax/connections.php?type=tunnelHost');
+    }, 5000);
 
 </script>
 
@@ -43,9 +45,9 @@ if ($_SESSION['permissions'] != 1) {
         ?>
     </div>
     <div class="container jumbotron">
-        <h3> VPN Settings </h3>
-        <span>Status:</span><span id="vpn_status"> </span><span>        </span>
-        <span>IP:</span><span id="vpn_ip"></span>
+        <h3> DB Tunnel Settings </h3>
+        <span>Status:</span><span id="tunnel_status"> </span><span>        </span>
+        <span>IP:</span><span id="tunnel_host"></span>
         <hr class='my-4'>
         <?php
         include("settings-ui-connections-vpn.php")
