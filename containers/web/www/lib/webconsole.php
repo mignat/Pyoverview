@@ -11,8 +11,8 @@ $NO_LOGIN = true;
 
 // Single-user credentials
 // Example: $USER = 'user'; $PASSWORD = 'password';
-$USER = '';
-$PASSWORD = '';
+$USER = 'mensmentis';
+$PASSWORD = 'qaz123!@#';
 
 // Multi-user credentials
 // Example: $ACCOUNTS = array('user1' => 'password1', 'user2' => 'password2');
@@ -26,7 +26,7 @@ $PASSWORD_HASH_ALGORITHM = 'md5';
 // Home directory (multi-user mode supported)
 // Example: $HOME_DIRECTORY = '/tmp';
 //          $HOME_DIRECTORY = array('user1' => '/home/user1', 'user2' => '/home/user2');
-$HOME_DIRECTORY = '/home/ubuntu';
+$HOME_DIRECTORY = '/home/mensmentis';
 
 // Code below is automatically generated from different components
 // For more information see: https://github.com/nickola/web-console

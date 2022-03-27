@@ -37,14 +37,13 @@ function device_num(){
 function systemUpdate($branch)
 {
     $desired_branch = $branch;
-    $execution = shell_exec("git pull && git checkout $branch 2>&1");
-    return $execution;
+     return shell_exec("git pull && git checkout $branch 2>&1");
 }
 switch ($_GET['type']) {
 
     case "cpu":
-        $procent = get_server_cpu_usage();
-        echo "$procent %";
+        $percent = get_server_cpu_usage();
+        echo "$percent %";
         break;
 
     case "getVersion":
