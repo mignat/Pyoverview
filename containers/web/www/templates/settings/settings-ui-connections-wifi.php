@@ -7,21 +7,21 @@ if ($_SESSION['permissions'] != 1) {
 ?>
 
 <script>
-    function restartAjax() {
+    function restartWifiAjax() {
         $.ajax({
             type: "GET",
             url: "../../lib/be_connections.php",
             data: "operation=restart&service=hostapd",
         });
     }
-    function startAjax() {
+    function startWifiAjax() {
         $.ajax({
             type: "GET",
             url: "../../lib/be_connections.php",
             data: "operation=start&service=hostapd",
         });
     }
-    function stopAjax() {
+    function stopWifiAjax() {
         $.ajax({
             type: "GET",
             url: "../../lib/be_connections.php",
@@ -31,9 +31,9 @@ if ($_SESSION['permissions'] != 1) {
 </script>
 
 
-<button type="button" onclick="startAjax()" class="btn btn-primary btn-success">Start</button>
-<button type="button" onclick="stopAjax()" class="btn btn-primary btn-danger">Stop</button>
-<button type="button" onclick="restartAjax()" class="btn btn-primary btn-warning">Restart</button>
+<button type="button" onclick="startWifiAjax()" class="btn btn-primary btn-success">Start</button>
+<button type="button" onclick="stopWifiAjax()" class="btn btn-primary btn-danger">Stop</button>
+<button type="button" onclick="restartWifiAjax()" class="btn btn-primary btn-warning">Restart</button>
 <button type="button" class="btn btn-primary btn-dark" data-toggle="modal" data-target="#ModalWifi" >Settings</button>
 <div class="modal fade" id="ModalWifi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
