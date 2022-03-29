@@ -24,10 +24,10 @@ if (isset($_GET['type'])) {
             echo getserviceStatus("hostapd");
             break;
         case "tunnelService":
-            echo getserviceStatus("ssh_tunnel");
+            echo getserviceStatus("db_tunnel");
             break;
         case "tunnelHost":
-            echo getTunnelHost("ssh_tunnel");
+            echo getTunnelHost("db_tunnel");
             break;
         case "wifiIP":
             echo getAdaptorIP("wlan1");
