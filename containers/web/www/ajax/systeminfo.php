@@ -37,7 +37,7 @@ function device_num(){
 function systemUpdate($branch)
 {
     $desired_branch = $branch;
-    $execution = shell_exec("cd /opt/Pyoverview/ && git pull && git checkout $branch 2>&1");
+    $execution = shell_exec("cd /opt/Pyoverview/ && sudo git pull && sudo git checkout $branch 2>&1");
     return $execution;
 }
 switch ($_GET['type']) {
