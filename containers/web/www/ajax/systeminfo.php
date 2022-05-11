@@ -37,7 +37,7 @@ function device_num(){
 function systemUpdate($branch)
 {
     $desired_branch = $branch;
-    $execution = shell_exec("git pull && git checkout $branch 2>&1");
+    $execution = shell_exec("cd /opt/Pyoverview/ && git pull && git checkout $branch 2>&1");
     return $execution;
 }
 switch ($_GET['type']) {
@@ -48,11 +48,11 @@ switch ($_GET['type']) {
         break;
 
     case "getVersion":
-        echo shell_exec("git rev-parse HEAD");
+        echo shell_exec("cd /opt/Pyoverview/ && git rev-parse HEAD");
         break;
 
     case "getBranch":
-        echo shell_exec("git rev-parse --abbrev-ref HEAD");
+        echo shell_exec("cd /opt/Pyoverview/ && git rev-parse --abbrev-ref HEAD");
         break;
 
 
