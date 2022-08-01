@@ -20,9 +20,11 @@ if (isset($_GET['verify_uuid'])){
 
     $uuid = sqlexec("select uuid()")[0]['uuid()'];
 
-
     $enroll_query = sqlexec("INSERT INTO `pyover_devices` (`UID`, `name`, `location`, `Description`, `status`, `last_contact`) VALUES ('$uuid', '$stationName', '$stationLocation', '$stationDescription', 'N/A', NULL)", null, true);
-    echo "$uuid\n";
+
+    $device_uuid = sqlexec("SELECT * FROM `pyover_devices` WHERE `UID`='$uuid'")[0]['UID'];
+
+    echo "$device_uuid\n";
 }
 
 
